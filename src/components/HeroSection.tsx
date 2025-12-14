@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -16,13 +17,25 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <div className="opacity-0 animate-fade-up">
+        {/* Profile Photo */}
+        <div className="opacity-0 animate-fade-up mb-8">
+          <div className="relative inline-block">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary via-coral to-gold rounded-full blur-xl opacity-50 animate-pulse" />
+            <img
+              src={profilePhoto}
+              alt="Tariq Mohmad Shiekh"
+              className="relative w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+            />
+          </div>
+        </div>
+
+        <div className="opacity-0 animate-fade-up animation-delay-200">
           <p className="text-muted-foreground text-lg md:text-xl mb-4 tracking-wider uppercase">
             Welcome
           </p>
         </div>
 
-        <h1 className="opacity-0 animate-fade-up animation-delay-200">
+        <h1 className="opacity-0 animate-fade-up animation-delay-400">
           <span className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text font-display">
             TARIQ MOHMAD
           </span>
@@ -31,7 +44,7 @@ const HeroSection = () => {
           </span>
         </h1>
 
-        <p className="opacity-0 animate-fade-up animation-delay-400 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="opacity-0 animate-fade-up animation-delay-600 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 max-w-3xl mx-auto leading-relaxed">
           Empowering audiences with meaningful digital experiences
         </p>
       </div>
