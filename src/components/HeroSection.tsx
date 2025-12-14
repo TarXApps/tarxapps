@@ -1,9 +1,8 @@
 import { ChevronDown } from "lucide-react";
-import { Button } from "./ui/button";
 
 const HeroSection = () => {
-  const scrollToPortfolio = () => {
-    document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToAbout = () => {
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -19,7 +18,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <div className="opacity-0 animate-fade-up">
           <p className="text-muted-foreground text-lg md:text-xl mb-4 tracking-wider uppercase">
-            Digital Creator & Storyteller
+            Welcome
           </p>
         </div>
 
@@ -35,22 +34,16 @@ const HeroSection = () => {
         <p className="opacity-0 animate-fade-up animation-delay-400 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 max-w-3xl mx-auto leading-relaxed">
           Empowering audiences with meaningful digital experiences
         </p>
-
-        <div className="opacity-0 animate-fade-up animation-delay-600 mt-12">
-          <Button
-            onClick={scrollToPortfolio}
-            size="lg"
-            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full glow-effect transition-all duration-300 hover:scale-105"
-          >
-            Explore My Work
-          </Button>
-        </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in animation-delay-800">
+      <button
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in animation-delay-800 cursor-pointer"
+        aria-label="Scroll to about section"
+      >
         <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
-      </div>
+      </button>
     </section>
   );
 };
