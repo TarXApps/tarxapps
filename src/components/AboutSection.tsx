@@ -3,7 +3,7 @@ const AboutSection = () => {
   const milestones = [{
     icon: Film,
     title: "Video Production",
-    description: "Crafting compelling visual stories that captivate and inspire audiences"
+    description: "Creating high-impact visual content that tells compelling stories and drives audience engagement across platforms."
   }, {
     icon: Palette,
     title: "Digital Branding",
