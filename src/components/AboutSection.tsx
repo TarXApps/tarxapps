@@ -11,11 +11,11 @@ const AboutSection = () => {
   }, {
     icon: Sparkles,
     title: "Event Marketing",
-    description: "Designing and delivering digital campaigns that elevate events, boost attendance, and strengthen stakeholder engagement."
+    description: "Creating memorable experiences through strategic digital campaigns"
   }, {
     icon: Rocket,
     title: "Continuous Learning",
-    description: "Expanding creative capabilities through ongoing self-development and exploration of emerging digital tools and techniques."
+    description: "Recently mastering Lovable.dev & Blender to push creative boundaries"
   }];
   return <section id="about" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
@@ -31,11 +31,9 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <div className="space-y-6">
-            <p className="text-lg text-foreground/90 leading-relaxed">
-              My journey into the world of digital creation began with a simple belief: 
-              <span className="text-secondary font-semibold"> every story deserves to be told in a way that moves people</span>.
+            <p className="text-lg text-foreground/90 leading-relaxed">A digital creator shaped by curiosity, empathy, and a passion for meaningful storytelling, crafting visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms.<span className="text-secondary font-semibold"> every story deserves to be told in a way that moves people</span>.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">Work focuses on transforming ideas into emotionally engaging content that informs, inspires, and connects with diverse audiences. With a deep commitment to growth and creative exploration, each project is approached with a balance of strategy and heart, aiming to deliver experiences that feel authentic, memorable, and impactful.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">A digital creator shaped by curiosity, empathy, and a passion for meaningful storytelling, crafting visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms. Work focuses on transforming ideas into emotionally engaging content that informs, inspires, and connects with diverse audiences. With a deep commitment to growth and creative exploration, each project is approached with a balance of strategy and heart, aiming to deliver experiences that feel authentic, memorable, and impactful.</p>
             
           </div>
 
