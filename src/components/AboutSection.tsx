@@ -7,7 +7,7 @@ const AboutSection = () => {
   }, {
     icon: Palette,
     title: "Digital Branding",
-    description: "Building authentic brand identities that resonate with communities"
+    description: "Building authentic brand identities through strategic messaging, visual design, and multi-platform content execution."
   }, {
     icon: Sparkles,
     title: "Event Marketing",
