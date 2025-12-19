@@ -44,7 +44,7 @@ const HeroSection = () => {
           </span>
         </h1>
 
-        <p className="opacity-0 animate-fade-up animation-delay-600 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="opacity-0 animate-fade-up animation-delay-600 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 mb-24 max-w-3xl mx-auto leading-relaxed">
           Empowering audiences with meaningful digital experiences
         </p>
       </div>
