@@ -7,6 +7,7 @@ import worldEnvironmentDayThumbnail from "@/assets/project-thumbnails/world-envi
 import evAutoShowRiyadhThumbnail from "@/assets/project-thumbnails/ev-auto-show-riyadh.png";
 import latestInnovationThumbnail from "@/assets/project-thumbnails/latest-innovation.png";
 import evAutoShowPassThumbnail from "@/assets/project-thumbnails/ev-auto-show-pass.png";
+import evAutoShowLogoThumbnail from "@/assets/project-thumbnails/ev-auto-show-logo.png";
 
 const projects = [
   {
@@ -54,7 +55,8 @@ const projects = [
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7050016790025842688/",
     type: "linkedin",
-    title: "AI Project 8"
+    title: "EV Auto Show",
+    thumbnail: evAutoShowLogoThumbnail
   },
   {
     url: "https://www.youtube.com/watch?v=HHuTL-d-cHI",
