@@ -1,10 +1,13 @@
 import { ExternalLink } from "lucide-react";
 
+import worldEvDayThumbnail from "@/assets/project-thumbnails/world-ev-day.png";
+
 const projects = [
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7371125329442045952/",
     type: "linkedin",
-    title: "AI Project 1"
+    title: "World EV Day - Driving Change",
+    thumbnail: worldEvDayThumbnail
   },
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7299075683446571008/",
@@ -87,6 +90,12 @@ const AIProjectsSection = () => {
               {project.type === "youtube" && project.videoId ? (
                 <img
                   src={`https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : project.thumbnail ? (
+                <img
+                  src={project.thumbnail}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
