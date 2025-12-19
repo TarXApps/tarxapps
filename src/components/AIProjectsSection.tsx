@@ -68,11 +68,13 @@ const AIProjectsSection = () => {
   const openProject = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
-  return <section className="py-20 px-6 bg-secondary/30">
+  return <section className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">Recent Digital Content Creation Projects</h2>
-          
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
+            Recent Digital Content Creation Projects
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
