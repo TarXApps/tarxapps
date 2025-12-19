@@ -2,6 +2,7 @@ import { ExternalLink } from "lucide-react";
 
 import worldEvDayThumbnail from "@/assets/project-thumbnails/world-ev-day.png";
 import saudiNationalDayThumbnail from "@/assets/project-thumbnails/saudi-national-day.png";
+import desertOasisThumbnail from "@/assets/project-thumbnails/desert-oasis.png";
 
 const projects = [
   {
@@ -19,7 +20,8 @@ const projects = [
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7166466845179420673/",
     type: "linkedin",
-    title: "AI Project 3"
+    title: "Desert Oasis",
+    thumbnail: desertOasisThumbnail
   },
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7336413662947004417/",
