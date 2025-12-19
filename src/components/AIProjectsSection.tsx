@@ -8,6 +8,7 @@ import evAutoShowRiyadhThumbnail from "@/assets/project-thumbnails/ev-auto-show-
 import latestInnovationThumbnail from "@/assets/project-thumbnails/latest-innovation.png";
 import evAutoShowPassThumbnail from "@/assets/project-thumbnails/ev-auto-show-pass.png";
 import evAutoShowLogoThumbnail from "@/assets/project-thumbnails/ev-auto-show-logo.png";
+import educationExpoThumbnail from "@/assets/project-thumbnails/education-expo.png";
 
 const projects = [
   {
@@ -73,7 +74,8 @@ const projects = [
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7028327886218477568/",
     type: "linkedin",
-    title: "AI Project 9"
+    title: "Education & Future Job Expo",
+    thumbnail: educationExpoThumbnail
   }
 ];
 
