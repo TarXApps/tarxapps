@@ -6,6 +6,7 @@ import desertOasisThumbnail from "@/assets/project-thumbnails/desert-oasis.png";
 import worldEnvironmentDayThumbnail from "@/assets/project-thumbnails/world-environment-day.png";
 import evAutoShowRiyadhThumbnail from "@/assets/project-thumbnails/ev-auto-show-riyadh.png";
 import latestInnovationThumbnail from "@/assets/project-thumbnails/latest-innovation.png";
+import evAutoShowPassThumbnail from "@/assets/project-thumbnails/ev-auto-show-pass.png";
 
 const projects = [
   {
@@ -47,7 +48,8 @@ const projects = [
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7106260617270898688/",
     type: "linkedin",
-    title: "AI Project 7"
+    title: "EV Auto Show Pass",
+    thumbnail: evAutoShowPassThumbnail
   },
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7050016790025842688/",
