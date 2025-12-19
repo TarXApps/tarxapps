@@ -15,7 +15,7 @@ const AboutSection = () => {
   }, {
     icon: Rocket,
     title: "Continuous Learning",
-    description: "Recently mastering Lovable.dev & Blender to push creative boundaries"
+    description: "Expanding creative capabilities through ongoing self-development and exploration of emerging digital tools and techniques."
   }];
   return <section id="about" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
