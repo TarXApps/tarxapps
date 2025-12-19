@@ -11,7 +11,7 @@ const AboutSection = () => {
   }, {
     icon: Sparkles,
     title: "Event Marketing",
-    description: "Creating memorable experiences through strategic digital campaigns"
+    description: "Designing and delivering digital campaigns that elevate events, boost attendance, and strengthen stakeholder engagement."
   }, {
     icon: Rocket,
     title: "Continuous Learning",
