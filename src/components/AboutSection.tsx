@@ -35,12 +35,7 @@ const AboutSection = () => {
               My journey into the world of digital creation began with a simple belief: 
               <span className="text-secondary font-semibold"> every story deserves to be told in a way that moves people</span>.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Over the years, I've dedicated myself to mastering the art of visual storytelling, 
-              event marketing, and digital branding. From conceptualizing ideas to bringing them 
-              to life through video production, I've always sought to create content that leaves 
-              a lasting impact.
-            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Work focuses on transforming ideas into emotionally engaging content that informs, inspires, and connects with diverse audiences. With a deep commitment to growth and creative exploration, each project is approached with a balance of strategy and heart, aiming to deliver experiences that feel authentic, memorable, and impactful.</p>
             
           </div>
 
