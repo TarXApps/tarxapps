@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 
 import worldEvDayThumbnail from "@/assets/project-thumbnails/world-ev-day.png";
+import saudiNationalDayThumbnail from "@/assets/project-thumbnails/saudi-national-day.png";
 
 const projects = [
   {
@@ -12,7 +13,8 @@ const projects = [
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7299075683446571008/",
     type: "linkedin",
-    title: "AI Project 2"
+    title: "Saudi National Day",
+    thumbnail: saudiNationalDayThumbnail
   },
   {
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7166466845179420673/",
