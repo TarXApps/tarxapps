@@ -1,4 +1,4 @@
-import { Sparkles, Film, Palette, Rocket } from "lucide-react";
+import { Sparkles, Film, Palette, Rocket, PenTool, Target } from "lucide-react";
 const AboutSection = () => {
   const milestones = [{
     icon: Film,
@@ -11,11 +11,19 @@ const AboutSection = () => {
   }, {
     icon: Sparkles,
     title: "Event Marketing",
-    description: "Creating memorable experiences through strategic digital campaigns"
+    description: "Designing and delivering digital campaigns that elevate events, boost attendance, and strengthen stakeholder engagement."
   }, {
     icon: Rocket,
     title: "Continuous Learning",
-    description: "Recently mastering Lovable.dev & Blender to push creative boundaries"
+    description: "Expanding creative capabilities through ongoing self-development and exploration of emerging digital tools and techniques."
+  }, {
+    icon: PenTool,
+    title: "Creative Storytelling",
+    description: "Crafting emotionally resonant narratives that connect audiences with ideas, brands, and experiences."
+  }, {
+    icon: Target,
+    title: "Audience Engagement",
+    description: "Designing content that sparks curiosity, emotional connection, and meaningful interaction across digital channels."
   }];
   return <section id="about" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
