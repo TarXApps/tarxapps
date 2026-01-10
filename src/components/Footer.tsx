@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -8,6 +9,11 @@ const Footer = () => {
   return (
     <footer className="py-12 px-4 border-t border-border/30 relative">
       <div className="max-w-6xl mx-auto">
+        {/* Social Links */}
+        <div className="flex justify-center mb-8">
+          <SocialLinks variant="footer" />
+        </div>
+
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <p className="text-muted-foreground text-sm">

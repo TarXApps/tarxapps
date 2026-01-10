@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import SocialLinks from "./SocialLinks";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -44,9 +45,14 @@ const HeroSection = () => {
           </span>
         </h1>
 
-        <p className="opacity-0 animate-fade-up animation-delay-600 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 mb-24 max-w-3xl mx-auto leading-relaxed">
+        <p className="opacity-0 animate-fade-up animation-delay-600 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 mb-8 max-w-3xl mx-auto leading-relaxed">
           Empowering audiences with meaningful digital experiences
         </p>
+
+        {/* Social Media Links */}
+        <div className="opacity-0 animate-fade-up animation-delay-800 mb-16">
+          <SocialLinks variant="hero" />
+        </div>
       </div>
 
       {/* Scroll indicator */}
