@@ -41,7 +41,7 @@ const AboutSection = () => {
           <div className="space-y-6">
             <p className="text-lg text-foreground/90 leading-relaxed">A digital creator shaped by curiosity, empathy, and a passion for meaningful storytelling, crafting visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms.<span className="text-secondary font-semibold"> every story deserves to be told in a way that moves people</span>.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">A digital creator shaped by curiosity, empathy, and a passion for meaningful storytelling, crafting visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms. Work focuses on transforming ideas into emotionally engaging content that informs, inspires, and connects with diverse audiences. With a deep commitment to growth and creative exploration, each project is approached with a balance of strategy and heart, aiming to deliver experiences that feel authentic, memorable, and impactful.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">Work focuses on transforming ideas into emotionally engaging content that informs, inspires, and connects with diverse audiences. With a deep commitment to growth and creative exploration, each project is approached with a balance of strategy and heart, aiming to deliver experiences that feel authentic, memorable, and impactful.</p>
             
           </div>
 
