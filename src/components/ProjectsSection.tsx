@@ -23,7 +23,7 @@ const projects = [
   },
   {
     title: "CrickMate",
-    description: "A mobile app for cricket enthusiasts to track matches, stats, and connect with fans.",
+    description: "A mobile app to schedule cricket matches from the comfort of your home.",
     type: "app",
     url: null,
     icon: Smartphone,
@@ -84,10 +84,10 @@ const ProjectsSection = () => {
                     </div>
                   )}
 
-                  {/* Coming Soon Overlay */}
+                  {/* Coming Soon Badge */}
                   {isComingSoon && (
-                    <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
-                      <span className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-semibold">
+                    <div className="absolute top-3 left-3">
+                      <span className="px-3 py-1 bg-primary text-primary-foreground rounded-full text-xs font-semibold shadow-lg">
                         Coming Soon
                       </span>
                     </div>
