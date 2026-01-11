@@ -44,7 +44,7 @@ const ProjectsSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
-            My Projects
+            My Recent Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
