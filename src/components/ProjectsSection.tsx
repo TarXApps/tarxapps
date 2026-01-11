@@ -1,4 +1,6 @@
 import { ExternalLink, Globe, Youtube, Smartphone } from "lucide-react";
+import atInternationalThumb from "@/assets/project-thumbnails/at-international.png";
+import crickmateThumb from "@/assets/project-thumbnails/crickmate.png";
 
 const projects = [
   {
@@ -8,10 +10,11 @@ const projects = [
     url: "https://atinternational.online/",
     icon: Globe,
     status: "live",
+    thumbnail: atInternationalThumb,
   },
   {
-    title: "Travel Documentary",
-    description: "Cinematic travel video capturing beautiful destinations and experiences.",
+    title: "How to Re-Register a Vehicle in J&K",
+    description: "RTO Kashmir video guide explaining the vehicle re-registration process in Jammu & Kashmir.",
     type: "youtube",
     url: "https://www.youtube.com/watch?v=GZiJOCa8lNQ&t=56s",
     icon: Youtube,
@@ -25,6 +28,7 @@ const projects = [
     url: null,
     icon: Smartphone,
     status: "coming-soon",
+    thumbnail: crickmateThumb,
   },
 ];
 
@@ -65,6 +69,12 @@ const ProjectsSection = () => {
                   {project.type === "youtube" && project.videoId ? (
                     <img
                       src={`https://img.youtube.com/vi/${project.videoId}/maxresdefault.jpg`}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  ) : project.thumbnail ? (
+                    <img
+                      src={project.thumbnail}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
