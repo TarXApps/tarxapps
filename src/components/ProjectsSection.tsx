@@ -49,7 +49,7 @@ const ProjectsSection = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
           {projects.map((project, index) => {
             const Icon = project.icon;
             const isComingSoon = project.status === "coming-soon";
@@ -64,7 +64,7 @@ const ProjectsSection = () => {
                     : "cursor-pointer hover:border-primary/50 hover:scale-105 hover:shadow-xl"
                 }`}
               >
-                {/* Thumbnail Area */}
+                {/* Thumbnail Area - reduced size */}
                 <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10">
                   {project.type === "youtube" && project.videoId ? (
                     <img
