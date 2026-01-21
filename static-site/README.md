@@ -21,10 +21,17 @@ static-site/
 │       ├── world-environment-day.png
 │       └── world-ev-day.png
 ├── css/
-│   └── styles.css
+│   ├── styles.css
+│   ├── auth.css
+│   └── admin.css
 ├── js/
-│   └── main.js
+│   ├── main.js
+│   ├── auth.js
+│   └── admin.js
 ├── index.html
+├── login.html
+├── signup.html
+├── admin.html
 ├── favicon.ico
 └── README.md
 ```
@@ -53,6 +60,24 @@ static-site/
 - **Accessible**: ARIA labels, focus states, keyboard navigation
 - **Fast Loading**: Lazy loading images, minimal CSS/JS
 - **Animations**: Smooth fade-in and hover effects
+- **Authentication**: Login/Signup pages with Supabase Auth
+- **Admin Dashboard**: View and manage contact form submissions
+
+## 🔐 Admin Dashboard
+
+The static site includes a fully functional admin dashboard:
+
+- **Login** (`login.html`): Sign in with email/password
+- **Signup** (`signup.html`): Create a new account
+- **Admin** (`admin.html`): View contact submissions (requires admin role)
+
+### Setting Up Admin Access
+
+1. Sign up for an account via `signup.html`
+2. Add an admin role in your Supabase dashboard:
+   - Go to the `user_roles` table
+   - Insert a row with your `user_id` and `role: 'admin'`
+3. Access the admin dashboard at `admin.html`
 
 ## 🎨 Technologies Used
 
@@ -60,6 +85,7 @@ static-site/
 - CSS3 (Custom properties, Flexbox, Grid, Animations)
 - Vanilla JavaScript (ES6+)
 - Google Fonts (Inter, Space Grotesk)
+- Supabase JS SDK (for auth and database)
 
 ## 📋 Checklist Before Uploading
 
@@ -68,9 +94,13 @@ static-site/
 - [ ] Test locally by opening `index.html` in a browser
 - [ ] Verify all links work correctly
 - [ ] Check responsive design on different screen sizes
+- [ ] Test login/signup functionality
+- [ ] Verify admin dashboard works
 
 ## 📝 Notes
 
 - YouTube thumbnails are loaded directly from YouTube's servers
 - Social media icons use inline SVG for optimal performance
 - All external links open in new tabs with `noopener noreferrer` for security
+- Supabase SDK is loaded from CDN for auth functionality
+- Admin dashboard requires valid Supabase connection
