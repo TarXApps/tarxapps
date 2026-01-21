@@ -47,6 +47,47 @@
   </style>
 </head>
 <body>
+  <!-- ========================================
+       NAVIGATION HEADER
+  ======================================== -->
+  <nav class="nav-header" id="mainNav">
+    <div class="nav-container">
+      <button class="nav-logo" id="navLogo" aria-label="Go to top">TMS</button>
+      
+      <!-- Desktop Navigation -->
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#honors" class="nav-link">Honors</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#videos" class="nav-link">Videos</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <svg class="nav-toggle-icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="nav-toggle-icon close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="#about" class="nav-mobile-link">About</a>
+      <a href="#experience" class="nav-mobile-link">Experience</a>
+      <a href="#honors" class="nav-mobile-link">Honors</a>
+      <a href="#projects" class="nav-mobile-link">Projects</a>
+      <a href="#videos" class="nav-mobile-link">Videos</a>
+      <a href="#contact" class="nav-mobile-link">Contact</a>
+    </div>
+  </nav>
   <main>
     <!-- ========================================
          HERO SECTION
@@ -459,7 +500,218 @@
     </section>
 
     <!-- ========================================
-         MY RECENT PROJECTS SECTION
+         HONORS & AWARDS SECTION
+    ======================================== -->
+    <section id="honors" class="section honors-section" aria-label="Honors and awards section">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <h2 class="section-title gradient-text">Honors & Awards</h2>
+          <div class="section-divider"></div>
+        </header>
+
+        <!-- Stats Summary -->
+        <div class="honors-stats">
+          <div class="honors-stat">
+            <div class="honors-stat-value amber">5</div>
+            <div class="honors-stat-label">Valuable Staff Awards</div>
+          </div>
+          <div class="honors-stat">
+            <div class="honors-stat-value emerald">2</div>
+            <div class="honors-stat-label">Promising Staff Awards</div>
+          </div>
+          <div class="honors-stat">
+            <div class="honors-stat-value yellow">2</div>
+            <div class="honors-stat-label">Special Recognition</div>
+          </div>
+          <div class="honors-stat">
+            <div class="honors-stat-value primary">16</div>
+            <div class="honors-stat-label">Certificates</div>
+          </div>
+        </div>
+
+        <!-- Awards Grid -->
+        <div class="honors-grid">
+          <article class="award-card">
+            <svg class="award-icon amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Valuable Staff Award</h3>
+              <p class="award-meta">Educational Technology Centre · Jun 2018</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Apr 2018</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Mar 2018</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra Toastmasters Club · Jan 2018</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Valuable Staff Award</h3>
+              <p class="award-meta">Educational Technology Centre · Jun 2017</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Department of IT · Mar 2017</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Nov 2016</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Valuable Staff Award</h3>
+              <p class="award-meta">Educational Technology Centre · Jun 2016</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Best Personality Award (HOTSTAR)</h3>
+              <p class="award-meta">Educational Technology Centre · Jun 2015</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Valuable Staff Award</h3>
+              <p class="award-meta">Educational Technology Centre · Jun 2015</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Jan 2015</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Dec 2014</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Valuable Staff Award</h3>
+              <p class="award-meta">Educational Technology Centre · Jun 2014</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Promising Staff Award</h3>
+              <p class="award-meta">Educational Technology Centre · Jul 2013</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Promising Staff Award</h3>
+              <p class="award-meta">Educational Technology Centre · Jun 2012</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Mar 2012</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Dept of Business Studies · Jul 2011</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Jul 2010</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Dept of Business Studies · Dec 2009</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Jul 2009</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Mar 2009</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Feb 2009</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Certificate of Appreciation</h3>
+              <p class="award-meta">Ibra College of Technology · Feb 2009</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+            <div class="award-content">
+              <h3 class="award-title">Staff of the Month</h3>
+              <p class="award-meta">Ministry of Manpower · Sep 2008</p>
+            </div>
+          </article>
+          <article class="award-card">
+            <svg class="award-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div class="award-content">
+              <h3 class="award-title">Letter of Appreciation</h3>
+              <p class="award-meta">Aeroman Aviation · Jan 2008</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
     ======================================== -->
     <section id="projects" class="section projects-section" aria-label="Projects section">
       <div class="container">
@@ -956,25 +1208,89 @@
          CONTACT SECTION
     ======================================== -->
     <section id="contact" class="section" aria-label="Contact section">
-      <div class="contact-content">
+      <div class="contact-form-wrapper">
         <!-- Section Header -->
         <header class="section-header">
           <h2 class="section-title gradient-text">Get In Touch</h2>
           <div class="section-divider"></div>
+          <p class="contact-desc" style="margin-top: 1.5rem; color: var(--muted-foreground); font-size: 1.125rem;">
+            Feel free to reach out if you'd like to connect or have any questions.
+          </p>
         </header>
 
-        <p class="contact-desc">
-          Feel free to reach out if you'd like to connect or have any questions.
-        </p>
+        <!-- Contact Form Card -->
+        <div class="contact-form-card">
+          <form id="contactForm" class="contact-form">
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required minlength="2" maxlength="100">
+              <span class="form-error" id="nameError"></span>
+            </div>
 
-        <!-- Email Button -->
-        <a href="mailto:shiekhtariq007@gmail.com" class="contact-btn glow-effect">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          <span>shiekhtariq007@gmail.com</span>
-        </a>
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required maxlength="255">
+              <span class="form-error" id="emailError"></span>
+            </div>
+
+            <!-- Service Dropdown -->
+            <div class="form-group">
+              <label for="service" class="form-label">Service of Interest</label>
+              <select id="service" name="service" class="form-select" required>
+                <option value="">Select a service</option>
+                <option value="Graphic Designing">Graphic Designing</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="Ad Creation">Ad Creation</option>
+                <option value="App Development">App Development</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+              </select>
+              <span class="form-error" id="serviceError"></span>
+            </div>
+
+            <!-- Captcha -->
+            <div class="form-group">
+              <label class="form-label">Security Check</label>
+              <div class="captcha-wrapper">
+                <div class="captcha-question">
+                  <span class="captcha-text" id="captchaQuestion">5 + 3 = ?</span>
+                </div>
+                <button type="button" id="refreshCaptcha" class="captcha-refresh" aria-label="Refresh captcha">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <polyline points="1 20 1 14 7 14"></polyline>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                  </svg>
+                </button>
+              </div>
+              <input type="number" id="captcha" name="captcha" class="form-input" placeholder="Enter the answer" required>
+              <span class="form-error" id="captchaError"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitBtn" class="form-submit-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span id="submitText">Send Message</span>
+            </button>
+          </form>
+
+          <!-- Direct Email -->
+          <div class="contact-direct">
+            <p class="contact-direct-label">Or email me directly</p>
+            <a href="mailto:shiekhtariq007@gmail.com" class="contact-direct-email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              shiekhtariq007@gmail.com
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
