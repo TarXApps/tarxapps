@@ -1,4 +1,28 @@
 import { Sparkles, Film, Palette, Rocket, PenTool, Target } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+const useInView = (options = {}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1, ...options });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isInView };
+};
+
 const AboutSection = () => {
   const milestones = [{
     icon: Film,
@@ -25,7 +49,9 @@ const AboutSection = () => {
     title: "Audience Engagement",
     description: "Designing content that sparks curiosity, emotional connection, and meaningful interaction across digital channels."
   }];
-  return <section id="about" className="py-24 px-4 relative">
+
+  return (
+    <section id="about" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -39,27 +65,48 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-5 gap-10 items-start">
           {/* Text content - takes 2 columns */}
           <div className="lg:col-span-2 space-y-6">
-            <p className="text-base text-foreground/90 leading-relaxed">A digital creator driven by curiosity, empathy, and a love for meaningful storytelling. I craft visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms because I believe <span className="text-secondary font-semibold">every story deserves to be told in a way that truly moves people</span>.
+            <p className="text-base text-foreground/90 leading-relaxed">
+              A digital creator driven by curiosity, empathy, and a love for meaningful storytelling. I craft visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms because I believe <span className="text-secondary font-semibold">every story deserves to be told in a way that truly moves people</span>.
             </p>
-            <p className="text-base text-muted-foreground leading-relaxed">My work centers on turning ideas into emotionally engaging content—content that informs, inspires, and builds real connection with diverse audiences. With a commitment to constant growth and creative exploration, I approach every project with equal parts strategy and heart, aiming to create experiences that feel authentic, memorable, and genuinely impactful.</p>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              My work centers on turning ideas into emotionally engaging content—content that informs, inspires, and builds real connection with diverse audiences. With a commitment to constant growth and creative exploration, I approach every project with equal parts strategy and heart, aiming to create experiences that feel authentic, memorable, and genuinely impactful.
+            </p>
           </div>
 
           {/* Milestones grid - takes 3 columns */}
           <div className="lg:col-span-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {milestones.map((milestone, index) => <div key={milestone.title} className="group p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:bg-card/80" style={{
-            animationDelay: `${index * 100}ms`
-          }}>
-                <milestone.icon className="w-8 h-8 text-primary mb-3 group-hover:text-secondary transition-colors duration-300" />
-                <h3 className="text-base font-semibold text-foreground mb-1">
-                  {milestone.title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {milestone.description}
-                </p>
-              </div>)}
+            {milestones.map((milestone, index) => (
+              <MilestoneCard key={milestone.title} milestone={milestone} index={index} />
+            ))}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
+const MilestoneCard = ({ milestone, index }: { milestone: { icon: any; title: string; description: string }; index: number }) => {
+  const { ref, isInView } = useInView();
+
+  return (
+    <div
+      ref={ref}
+      className={`group p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:bg-card/80 ${
+        isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+      style={{
+        transitionDelay: `${index * 100}ms`
+      }}
+    >
+      <milestone.icon className="w-8 h-8 text-primary mb-3 group-hover:text-secondary transition-colors duration-300" />
+      <h3 className="text-base font-semibold text-foreground mb-1">
+        {milestone.title}
+      </h3>
+      <p className="text-xs text-muted-foreground leading-relaxed">
+        {milestone.description}
+      </p>
+    </div>
+  );
+};
+
 export default AboutSection;
