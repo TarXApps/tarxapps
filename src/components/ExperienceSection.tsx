@@ -1,4 +1,110 @@
-import { Calendar, MapPin, Briefcase } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+const useInView = (options = {}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.15, ...options });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isInView };
+};
+
+interface ExperienceCardProps {
+  exp: {
+    company: string;
+    role: string;
+    period: string;
+    location: string;
+    description?: string;
+    bullets?: string[];
+  };
+  index: number;
+}
+
+const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
+  const { ref, isInView } = useInView();
+  const isEven = index % 2 === 0;
+
+  return (
+    <div
+      ref={ref}
+      className={`relative pl-14 md:pl-0 pb-10 ${
+        isEven ? "md:pr-[calc(50%+2.5rem)] md:text-right" : "md:pl-[calc(50%+2.5rem)]"
+      }`}
+    >
+      {/* Timeline dot */}
+      <div 
+        className={`absolute left-[0.625rem] md:left-1/2 top-2 w-5 h-5 rounded-full bg-primary border-4 border-background shadow-[0_0_15px_hsl(var(--primary))] md:-translate-x-1/2 z-10 transition-all duration-500 ${
+          isInView ? "scale-100 opacity-100" : "scale-0 opacity-0"
+        }`}
+        style={{ transitionDelay: `${index * 100}ms` }}
+      />
+
+      {/* Card */}
+      <div 
+        className={`group p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-700 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.3)] hover:-translate-y-1 ${
+          isInView 
+            ? "opacity-100 translate-y-0" 
+            : `opacity-0 ${isEven ? "md:translate-x-10" : "md:-translate-x-10"} translate-y-10`
+        }`}
+        style={{ transitionDelay: `${index * 100 + 150}ms` }}
+      >
+        {/* Date */}
+        <span className={`inline-flex items-center gap-2 text-sm font-medium text-secondary mb-3 ${isEven ? "md:flex-row-reverse" : ""}`}>
+          <Calendar className="w-4 h-4" />
+          {exp.period}
+        </span>
+
+        {/* Company */}
+        <h3 className="text-xl font-bold font-display text-foreground mb-1">
+          {exp.company}
+        </h3>
+
+        {/* Role */}
+        <p className="text-base font-semibold gradient-text mb-2">
+          {exp.role}
+        </p>
+
+        {/* Location */}
+        <p className={`text-sm text-muted-foreground mb-4 flex items-center gap-1 ${isEven ? "md:justify-end" : ""}`}>
+          <MapPin className="w-3.5 h-3.5" />
+          {exp.location}
+        </p>
+
+        {/* Description or bullets */}
+        {exp.description && (
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {exp.description}
+          </p>
+        )}
+        {exp.bullets && (
+          <ul className={`text-sm text-muted-foreground space-y-2 ${isEven ? "md:text-right" : ""}`}>
+            {exp.bullets.map((bullet, i) => (
+              <li key={i} className={`relative ${isEven ? "md:pr-5 md:pl-0 pl-5" : "pl-5"}`}>
+                <span className={`absolute text-secondary ${isEven ? "md:right-0 md:left-auto left-0" : "left-0"}`}>▹</span>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const ExperienceSection = () => {
   const experiences = [
@@ -77,15 +183,42 @@ const ExperienceSection = () => {
     },
   ];
 
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [headerInView, setHeaderInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setHeaderInView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="experience" className="py-24 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 ${
+            headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
             Professional Experience
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
+          <div 
+            className={`w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full transition-all duration-700 delay-300 ${
+              headerInView ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+            }`}
+          />
         </div>
 
         {/* Timeline */}
@@ -94,57 +227,7 @@ const ExperienceSection = () => {
           <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent md:-translate-x-1/2" />
 
           {experiences.map((exp, index) => (
-            <div
-              key={exp.company}
-              className={`relative pl-14 md:pl-0 pb-10 ${
-                index % 2 === 0 ? "md:pr-[calc(50%+2.5rem)] md:text-right" : "md:pl-[calc(50%+2.5rem)]"
-              }`}
-            >
-              {/* Timeline dot */}
-              <div className="absolute left-[0.625rem] md:left-1/2 top-2 w-5 h-5 rounded-full bg-primary border-4 border-background shadow-[0_0_15px_hsl(var(--primary))] md:-translate-x-1/2 z-10" />
-
-              {/* Card */}
-              <div className="group p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.3)] hover:-translate-y-1">
-                {/* Date */}
-                <span className={`inline-flex items-center gap-2 text-sm font-medium text-secondary mb-3 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
-                  <Calendar className="w-4 h-4" />
-                  {exp.period}
-                </span>
-
-                {/* Company */}
-                <h3 className="text-xl font-bold font-display text-foreground mb-1">
-                  {exp.company}
-                </h3>
-
-                {/* Role */}
-                <p className="text-base font-semibold gradient-text mb-2">
-                  {exp.role}
-                </p>
-
-                {/* Location */}
-                <p className={`text-sm text-muted-foreground mb-4 flex items-center gap-1 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                  <MapPin className="w-3.5 h-3.5" />
-                  {exp.location}
-                </p>
-
-                {/* Description or bullets */}
-                {exp.description && (
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {exp.description}
-                  </p>
-                )}
-                {exp.bullets && (
-                  <ul className={`text-sm text-muted-foreground space-y-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>
-                    {exp.bullets.map((bullet, i) => (
-                      <li key={i} className={`relative ${index % 2 === 0 ? "md:pr-5 md:pl-0 pl-5" : "pl-5"}`}>
-                        <span className={`absolute text-secondary ${index % 2 === 0 ? "md:right-0 md:left-auto left-0" : "left-0"}`}>▹</span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
+            <ExperienceCard key={exp.company} exp={exp} index={index} />
           ))}
         </div>
       </div>
