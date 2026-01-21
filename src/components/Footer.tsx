@@ -20,19 +20,6 @@ const Footer = () => {
             Copyright © 2024 Tariq Mohmad Shiekh
           </p>
 
-          {/* Quick links */}
-          <nav className="flex gap-6">
-            {["About", "Contact"].map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                {link}
-              </a>
-            ))}
-          </nav>
-
           {/* Back to top */}
           <button
             onClick={scrollToTop}
