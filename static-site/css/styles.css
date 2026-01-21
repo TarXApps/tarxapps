@@ -457,6 +457,184 @@ button {
 }
 
 /* ----------------------------------------
+   EXPERIENCE SECTION
+---------------------------------------- */
+.experience-section {
+  background: hsla(240, 15%, 15%, 0.3);
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--violet), var(--coral), var(--gold));
+}
+
+@media (min-width: 768px) {
+  .experience-timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.experience-item {
+  position: relative;
+  padding-left: 60px;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .experience-item {
+    padding-left: 0;
+    width: 50%;
+  }
+  
+  .experience-item:nth-child(odd) {
+    padding-right: 40px;
+    text-align: right;
+    margin-left: 0;
+  }
+  
+  .experience-item:nth-child(even) {
+    padding-left: 40px;
+    margin-left: 50%;
+  }
+}
+
+.experience-dot {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+  box-shadow: 0 0 15px var(--violet-glow);
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .experience-dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.experience-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.experience-card:hover {
+  border-color: hsla(270, 77%, 40%, 0.5);
+  box-shadow: 0 10px 40px -10px hsla(270, 77%, 40%, 0.3);
+  transform: translateY(-4px);
+}
+
+.experience-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+}
+
+.experience-date svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.experience-company {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 0.25rem;
+}
+
+.experience-role {
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--violet) 0%, var(--coral) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.experience-location {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .experience-item:nth-child(odd) .experience-location {
+    justify-content: flex-end;
+  }
+}
+
+.experience-location svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.experience-desc {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.experience-desc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-desc li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .experience-item:nth-child(odd) .experience-desc li {
+    padding-left: 0;
+    padding-right: 1.25rem;
+  }
+  
+  .experience-item:nth-child(odd) .experience-desc li::before {
+    left: auto;
+    right: 0;
+  }
+}
+
+.experience-desc li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+/* ----------------------------------------
    PROJECTS SECTION
 ---------------------------------------- */
 .projects-section {
