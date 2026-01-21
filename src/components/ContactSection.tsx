@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Mail, Send, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -78,17 +79,34 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase
+        .from("contact_submissions")
+        .insert({
+          name: data.name.trim(),
+          email: data.email.trim(),
+          service: data.service,
+        });
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+      if (error) throw error;
 
-    form.reset();
-    refreshCaptcha();
-    setIsSubmitting(false);
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      form.reset();
+      refreshCaptcha();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
