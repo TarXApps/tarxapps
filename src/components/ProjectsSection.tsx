@@ -25,9 +25,9 @@ const projects = [
     title: "CrickMate",
     description: "A mobile app to schedule cricket matches from the comfort of your home.",
     type: "app",
-    url: null,
+    url: "https://play.google.com/store/apps/details?id=co.median.android.pwwrjrx&hl=en-US&ah=K7Y3WhGgKyUb0ko9KgbyUDJFOKs",
     icon: Smartphone,
-    status: "coming-soon",
+    status: "live",
     thumbnail: crickmateThumb,
   },
 ];
