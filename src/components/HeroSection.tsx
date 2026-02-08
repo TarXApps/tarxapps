@@ -35,9 +35,8 @@ const HeroSection = () => {
 
         {/* Headline */}
         <div className="opacity-0 animate-fade-up animation-delay-200">
-          <h1 className="text-foreground">
-            Hi, I'm{" "}
-            <span className="gradient-text">Tariq Mohmad Shiekh</span>
+          <h1 className="gradient-text">
+            Tariq Mohmad Shiekh
           </h1>
         </div>
 
