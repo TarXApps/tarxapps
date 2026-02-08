@@ -39,7 +39,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-28 md:py-32 px-4 relative bg-muted/30">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
           <SectionLabel label="Work" />
           <h2 className="gradient-text inline-block mb-6">My Recent Projects</h2>
@@ -50,8 +50,8 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* 3-column portfolio grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Compact portfolio grid matching other sections */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
           {projects.map((project, index) => {
             const Icon = project.icon;
 
@@ -59,57 +59,41 @@ const ProjectsSection = () => {
               <div
                 key={index}
                 onClick={() => openProject(project.url)}
-                className="group relative rounded-2xl overflow-hidden bg-card border border-border/50 cursor-pointer transition-all duration-500 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2"
+                className="group relative aspect-video rounded-xl overflow-hidden bg-card border border-border/50 cursor-pointer transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:scale-105"
               >
                 {/* Thumbnail */}
-                <div className="aspect-[4/3] relative overflow-hidden">
-                  {project.type === "youtube" && project.videoId ? (
-                    <img
-                      src={`https://img.youtube.com/vi/${project.videoId}/maxresdefault.jpg`}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  ) : project.thumbnail ? (
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                      <Icon className="w-16 h-16 text-primary/50" />
-                    </div>
-                  )}
-
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
-
-                  {/* Hover overlay with icon */}
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                      <ExternalLink className="w-6 h-6 text-primary" />
-                    </div>
+                {project.type === "youtube" && project.videoId ? (
+                  <img
+                    src={`https://img.youtube.com/vi/${project.videoId}/maxresdefault.jpg`}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : project.thumbnail ? (
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                    <Icon className="w-12 h-12 text-primary/50" />
                   </div>
+                )}
 
-                  {/* Type badge */}
-                  <div className="absolute top-4 left-4">
-                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border/50">
-                      <Icon className="w-4 h-4 text-secondary" />
-                      <span className="text-xs font-medium text-foreground">
-                        {project.type === "youtube" ? "Video" : project.type === "website" ? "Website" : "App"}
-                      </span>
-                    </div>
-                  </div>
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3">
+                  <ExternalLink className="w-8 h-8 text-primary mb-2" />
+                  <span className="text-sm font-medium text-foreground text-center line-clamp-1">{project.title}</span>
                 </div>
 
-                {/* Content */}
-                <div className="p-5">
-                  <h5 className="text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h5>
-                  <p className="text-small text-muted-foreground line-clamp-2">
-                    {project.description}
-                  </p>
+                {/* Type badge */}
+                <div className="absolute top-2 right-2">
+                  <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs font-medium">
+                    <Icon className="w-3 h-3 text-secondary" />
+                    <span className="text-foreground">
+                      {project.type === "youtube" ? "Video" : project.type === "website" ? "Website" : "App"}
+                    </span>
+                  </div>
                 </div>
               </div>
             );
