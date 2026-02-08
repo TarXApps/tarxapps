@@ -92,11 +92,15 @@ const ServicesSection = () => {
     <section id="services" className="py-28 md:py-32 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <SectionLabel label="Services" />
-          <h2 className="gradient-text inline-block">What I Do</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
-          <p className="text-lead mt-6 max-w-2xl mx-auto">
+          <h2 className="gradient-text inline-block mb-6">What I Do</h2>
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="h-1 w-16 bg-gradient-to-r from-transparent to-primary rounded-full" />
+            <div className="h-2 w-2 rounded-full bg-secondary" />
+            <div className="h-1 w-16 bg-gradient-to-l from-transparent to-primary rounded-full" />
+          </div>
+          <p className="text-lead max-w-2xl mx-auto">
             Transforming ideas into impactful digital experiences through creative expertise and strategic thinking.
           </p>
         </div>

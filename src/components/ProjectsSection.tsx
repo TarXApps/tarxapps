@@ -43,10 +43,14 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-28 md:py-32 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <SectionLabel label="Work" />
-          <h2 className="gradient-text inline-block">My Recent Projects</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
+          <h2 className="gradient-text inline-block mb-6">My Recent Projects</h2>
+          <div className="flex items-center justify-center gap-2">
+            <div className="h-1 w-16 bg-gradient-to-r from-transparent to-primary rounded-full" />
+            <div className="h-2 w-2 rounded-full bg-secondary" />
+            <div className="h-1 w-16 bg-gradient-to-l from-transparent to-primary rounded-full" />
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">

@@ -204,17 +204,23 @@ const ExperienceSection = () => {
         {/* Section header */}
         <div 
           ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-20 transition-all duration-700 ${
             headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <SectionLabel label="Experience" />
-          <h2 className="gradient-text inline-block">Professional Experience</h2>
-          <div 
-            className={`w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full transition-all duration-700 delay-300 ${
+          <h2 className="gradient-text inline-block mb-6">Professional Experience</h2>
+          <div className="flex items-center justify-center gap-2">
+            <div className={`h-1 w-16 bg-gradient-to-r from-transparent to-primary rounded-full transition-all duration-700 delay-300 ${
               headerInView ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-            }`}
-          />
+            }`} />
+            <div className={`h-2 w-2 rounded-full bg-secondary transition-all duration-700 delay-400 ${
+              headerInView ? "opacity-100 scale-100" : "opacity-0 scale-0"
+            }`} />
+            <div className={`h-1 w-16 bg-gradient-to-l from-transparent to-primary rounded-full transition-all duration-700 delay-300 ${
+              headerInView ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+            }`} />
+          </div>
         </div>
 
         {/* Timeline */}
