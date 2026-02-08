@@ -201,20 +201,19 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="py-28 md:py-32 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        {/* Section header - left aligned */}
+        {/* Section header */}
         <div 
           ref={headerRef}
-          className={`mb-16 transition-all duration-700 ${
+          className={`text-center mb-16 transition-all duration-700 ${
             headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <SectionLabel label="Experience" />
           <h2 className="gradient-text inline-block">Professional Experience</h2>
           <div 
-            className={`w-24 h-1 bg-gradient-to-r from-primary to-secondary mt-4 rounded-full transition-all duration-700 delay-300 ${
+            className={`w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full transition-all duration-700 delay-300 ${
               headerInView ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
             }`}
-            style={{ transformOrigin: 'left' }}
           />
         </div>
 

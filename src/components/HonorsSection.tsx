@@ -101,11 +101,11 @@ const HonorsSection = () => {
   return (
     <section id="honors" className="py-28 md:py-32 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        {/* Section header - left aligned */}
-        <div className="mb-12">
+        {/* Section header */}
+        <div className="text-center mb-12">
           <SectionLabel label="Honors" />
           <h2 className="gradient-text inline-block">Honors & Awards</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mt-4 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Summary stats */}

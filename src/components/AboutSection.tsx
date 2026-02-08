@@ -29,17 +29,17 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-28 md:py-32 px-4 relative">
       <div className="max-w-4xl mx-auto">
-        {/* Section header - left aligned */}
-        <div className="mb-10">
+        {/* Section header */}
+        <div className="text-center mb-12">
           <SectionLabel label="About" />
           <h2 className="gradient-text inline-block">About Me</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mt-4 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Story content - left aligned */}
+        {/* Story content */}
         <div
           ref={ref}
-          className={`space-y-6 transition-all duration-700 ${
+          className={`space-y-6 text-center transition-all duration-700 ${
             isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -47,7 +47,7 @@ const AboutSection = () => {
             A digital creator driven by curiosity, empathy, and a love for meaningful storytelling. I craft visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms because I believe{" "}
             <span className="text-secondary font-semibold">every story deserves to be told in a way that truly moves people</span>.
           </p>
-          <p className="text-muted-foreground max-w-3xl">
+          <p className="text-muted-foreground max-w-3xl mx-auto">
             My work centers on turning ideas into emotionally engaging content—content that informs, inspires, and builds real connection with diverse audiences. With a commitment to constant growth and creative exploration, I approach every project with equal parts strategy and heart, aiming to create experiences that feel authentic, memorable, and genuinely impactful.
           </p>
         </div>

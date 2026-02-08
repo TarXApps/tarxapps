@@ -91,12 +91,12 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-28 md:py-32 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        {/* Section header - left aligned */}
-        <div className="mb-16">
+        {/* Section header */}
+        <div className="text-center mb-16">
           <SectionLabel label="Services" />
           <h2 className="gradient-text inline-block">What I Do</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mt-4 rounded-full" />
-          <p className="text-lead mt-6 max-w-2xl">
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
+          <p className="text-lead mt-6 max-w-2xl mx-auto">
             Transforming ideas into impactful digital experiences through creative expertise and strategic thinking.
           </p>
         </div>

@@ -14,7 +14,7 @@ const Footer = () => {
           <SocialLinks variant="footer" />
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-6 text-center">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <p className="text-caption">
             Copyright © 2025 Tariq Mohmad Shiekh
