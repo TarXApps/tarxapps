@@ -102,9 +102,7 @@ const HonorsSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
-            Honors & Awards
-          </h2>
+          <h2 className="gradient-text inline-block">Honors & Awards</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
 
@@ -116,20 +114,20 @@ const HonorsSection = () => {
           }`}
         >
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">
-            <div className="text-3xl font-bold text-amber-500">{valuableCount}</div>
-            <div className="text-xs text-muted-foreground">Valuable Staff Awards</div>
+            <div className="text-3xl font-bold font-display text-amber-500">{valuableCount}</div>
+            <p className="text-caption">Valuable Staff Awards</p>
           </div>
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">
-            <div className="text-3xl font-bold text-emerald-500">{promisingCount}</div>
-            <div className="text-xs text-muted-foreground">Promising Staff Awards</div>
+            <div className="text-3xl font-bold font-display text-emerald-500">{promisingCount}</div>
+            <p className="text-caption">Promising Staff Awards</p>
           </div>
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">
-            <div className="text-3xl font-bold text-yellow-400">{specialCount}</div>
-            <div className="text-xs text-muted-foreground">Special Recognition</div>
+            <div className="text-3xl font-bold font-display text-yellow-400">{specialCount}</div>
+            <p className="text-caption">Special Recognition</p>
           </div>
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">
-            <div className="text-3xl font-bold text-primary">{appreciationCount}</div>
-            <div className="text-xs text-muted-foreground">Certificates</div>
+            <div className="text-3xl font-bold font-display text-primary">{appreciationCount}</div>
+            <p className="text-caption">Certificates</p>
           </div>
         </div>
 
@@ -162,10 +160,8 @@ const AwardCard = ({ award, index }: { award: AwardItem; index: number }) => {
       <div className="flex items-start gap-2">
         <Icon className={`w-4 h-4 ${iconColor} flex-shrink-0 mt-0.5`} />
         <div className="min-w-0 flex-1">
-          <h3 className="text-xs font-semibold text-foreground leading-tight truncate">
-            {award.title}
-          </h3>
-          <p className="text-[10px] text-muted-foreground mt-0.5">
+          <h6 className="text-foreground leading-tight truncate">{award.title}</h6>
+          <p className="text-caption mt-0.5">
             {award.issuer} · {award.date}
           </p>
         </div>

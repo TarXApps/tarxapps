@@ -55,9 +55,7 @@ const AboutSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
-            About Me
-          </h2>
+          <h2 className="gradient-text inline-block">About Me</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
 
@@ -65,10 +63,10 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-5 gap-10 items-start">
           {/* Text content - takes 2 columns */}
           <div className="lg:col-span-2 space-y-6">
-            <p className="text-base text-foreground/90 leading-relaxed">
+            <p className="text-foreground/90">
               A digital creator driven by curiosity, empathy, and a love for meaningful storytelling. I craft visuals and narratives that resonate across YouTube, Instagram, Facebook, and other digital platforms because I believe <span className="text-secondary font-semibold">every story deserves to be told in a way that truly moves people</span>.
             </p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground">
               My work centers on turning ideas into emotionally engaging content—content that informs, inspires, and builds real connection with diverse audiences. With a commitment to constant growth and creative exploration, I approach every project with equal parts strategy and heart, aiming to create experiences that feel authentic, memorable, and genuinely impactful.
             </p>
           </div>
@@ -99,10 +97,8 @@ const MilestoneCard = ({ milestone, index }: { milestone: { icon: any; title: st
       }}
     >
       <milestone.icon className="w-8 h-8 text-primary mb-3 group-hover:text-secondary transition-colors duration-300" />
-      <h3 className="text-base font-semibold text-foreground mb-1">
-        {milestone.title}
-      </h3>
-      <p className="text-xs text-muted-foreground leading-relaxed">
+      <h5 className="text-foreground mb-1">{milestone.title}</h5>
+      <p className="text-caption">
         {milestone.description}
       </p>
     </div>

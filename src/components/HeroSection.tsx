@@ -34,15 +34,15 @@ const HeroSection = () => {
         </div>
 
         {/* Headline */}
-        <h1 className="opacity-0 animate-fade-up animation-delay-200">
-          <span className="block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground font-display leading-tight">
+        <div className="opacity-0 animate-fade-up animation-delay-200">
+          <h1 className="text-foreground">
             Hi, I'm{" "}
             <span className="gradient-text">Tariq Mohmad Shiekh</span>
-          </span>
-        </h1>
+          </h1>
+        </div>
 
         {/* Subheadline */}
-        <p className="opacity-0 animate-fade-up animation-delay-400 text-lg md:text-xl lg:text-2xl text-muted-foreground mt-6 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="opacity-0 animate-fade-up animation-delay-400 text-lead mt-6 mb-12 max-w-2xl mx-auto">
           Digital content creator crafting meaningful experiences that inspire and engage audiences worldwide.
         </p>
 

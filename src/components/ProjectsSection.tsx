@@ -43,9 +43,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-28 md:py-32 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
-            My Recent Projects
-          </h2>
+          <h2 className="gradient-text inline-block">My Recent Projects</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
 
@@ -126,11 +124,9 @@ const ProjectsSection = () => {
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {project.title}
-                    </h3>
+                    <h5 className="text-foreground">{project.title}</h5>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-small text-muted-foreground">
                     {project.description}
                   </p>
                 </div>

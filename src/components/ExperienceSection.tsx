@@ -64,35 +64,31 @@ const ExperienceCard = ({ exp, index }: ExperienceCardProps) => {
         style={{ transitionDelay: `${index * 100 + 150}ms` }}
       >
         {/* Date */}
-        <span className={`inline-flex items-center gap-2 text-sm font-medium text-secondary mb-3 ${isEven ? "md:flex-row-reverse" : ""}`}>
+        <span className={`inline-flex items-center gap-2 text-small font-medium text-secondary mb-3 ${isEven ? "md:flex-row-reverse" : ""}`}>
           <Calendar className="w-4 h-4" />
           {exp.period}
         </span>
 
         {/* Company */}
-        <h3 className="text-xl font-bold font-display text-foreground mb-1">
-          {exp.company}
-        </h3>
+        <h4 className="text-foreground mb-1">{exp.company}</h4>
 
         {/* Role */}
-        <p className="text-base font-semibold gradient-text mb-2">
-          {exp.role}
-        </p>
+        <h6 className="gradient-text mb-2">{exp.role}</h6>
 
         {/* Location */}
-        <p className={`text-sm text-muted-foreground mb-4 flex items-center gap-1 ${isEven ? "md:justify-end" : ""}`}>
+        <p className={`text-caption mb-4 flex items-center gap-1 ${isEven ? "md:justify-end" : ""}`}>
           <MapPin className="w-3.5 h-3.5" />
           {exp.location}
         </p>
 
         {/* Description or bullets */}
         {exp.description && (
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-small text-muted-foreground">
             {exp.description}
           </p>
         )}
         {exp.bullets && (
-          <ul className={`text-sm text-muted-foreground space-y-2 ${isEven ? "md:text-right" : ""}`}>
+          <ul className={`text-small text-muted-foreground space-y-2 ${isEven ? "md:text-right" : ""}`}>
             {exp.bullets.map((bullet, i) => (
               <li key={i} className={`relative ${isEven ? "md:pr-5 md:pl-0 pl-5" : "pl-5"}`}>
                 <span className={`absolute text-secondary ${isEven ? "md:right-0 md:left-auto left-0" : "left-0"}`}>▹</span>
@@ -211,9 +207,7 @@ const ExperienceSection = () => {
             headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
-            Professional Experience
-          </h2>
+          <h2 className="gradient-text inline-block">Professional Experience</h2>
           <div 
             className={`w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full transition-all duration-700 delay-300 ${
               headerInView ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
