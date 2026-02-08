@@ -113,9 +113,9 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-28 md:py-32 px-4 relative">
       <div className="max-w-2xl mx-auto">
-        {/* Section header */}
+        {/* Section header - centered for contact */}
         <div className="mb-12 text-center">
-          <SectionLabel label="Contact" />
+          <SectionLabel label="Contact" centered />
           <h2 className="gradient-text inline-block">Get In Touch</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
           <p className="text-lead max-w-2xl mx-auto mt-6">

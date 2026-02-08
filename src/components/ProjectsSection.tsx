@@ -43,10 +43,11 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-28 md:py-32 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        {/* Section header - left aligned */}
+        <div className="mb-16">
           <SectionLabel label="Work" />
           <h2 className="gradient-text inline-block">My Recent Projects</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
