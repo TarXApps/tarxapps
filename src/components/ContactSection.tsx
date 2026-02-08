@@ -114,11 +114,15 @@ const ContactSection = () => {
     <section id="contact" className="py-28 md:py-32 px-4 relative">
       <div className="max-w-2xl mx-auto">
         {/* Section header */}
-        <div className="mb-12 text-center">
+        <div className="mb-16 text-center">
           <SectionLabel label="Contact" />
-          <h2 className="gradient-text inline-block">Get In Touch</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
-          <p className="text-lead max-w-2xl mx-auto mt-6">
+          <h2 className="gradient-text inline-block mb-6">Get In Touch</h2>
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="h-1 w-16 bg-gradient-to-r from-transparent to-primary rounded-full" />
+            <div className="h-2 w-2 rounded-full bg-secondary" />
+            <div className="h-1 w-16 bg-gradient-to-l from-transparent to-primary rounded-full" />
+          </div>
+          <p className="text-lead max-w-2xl mx-auto">
             Feel free to reach out if you'd like to connect or have any questions.
           </p>
         </div>

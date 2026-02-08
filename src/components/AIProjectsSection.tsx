@@ -71,10 +71,14 @@ const AIProjectsSection = () => {
   };
   return <section className="py-28 md:py-32 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <SectionLabel label="Portfolio" />
-          <h2 className="gradient-text inline-block">Digital Content Creation</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
+          <h2 className="gradient-text inline-block mb-6">Digital Content Creation</h2>
+          <div className="flex items-center justify-center gap-2">
+            <div className="h-1 w-16 bg-gradient-to-r from-transparent to-primary rounded-full" />
+            <div className="h-2 w-2 rounded-full bg-secondary" />
+            <div className="h-1 w-16 bg-gradient-to-l from-transparent to-primary rounded-full" />
+          </div>
         </div>
 
         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
