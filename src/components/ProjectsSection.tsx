@@ -1,6 +1,7 @@
 import { ExternalLink, Globe, Youtube, Smartphone } from "lucide-react";
 import atInternationalThumb from "@/assets/project-thumbnails/at-international.png";
 import crickmateThumb from "@/assets/project-thumbnails/crickmate.png";
+import SectionLabel from "./SectionLabel";
 
 const projects = [
   {
@@ -43,6 +44,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-28 md:py-32 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
+          <SectionLabel label="Work" />
           <h2 className="gradient-text inline-block">My Recent Projects</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>

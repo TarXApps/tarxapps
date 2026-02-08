@@ -9,18 +9,23 @@ import AIProjectsSection from "@/components/AIProjectsSection";
 import VideoGallery from "@/components/VideoGallery";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
+      <SectionDivider />
       <AboutSection />
       <ServicesSection />
+      <SectionDivider />
       <ExperienceSection />
       <HonorsSection />
+      <SectionDivider />
       <ProjectsSection />
       <AIProjectsSection />
+      <SectionDivider />
       <VideoGallery />
       <ContactSection />
       <Footer />

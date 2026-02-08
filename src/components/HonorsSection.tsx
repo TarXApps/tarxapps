@@ -1,5 +1,6 @@
 import { Award, Trophy, Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import SectionLabel from "./SectionLabel";
 
 const useInView = (options = {}) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -102,6 +103,7 @@ const HonorsSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
+          <SectionLabel label="Honors" />
           <h2 className="gradient-text inline-block">Honors & Awards</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>

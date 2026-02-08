@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import SectionLabel from "./SectionLabel";
 import worldEvDayThumbnail from "@/assets/project-thumbnails/world-ev-day.png";
 import saudiNationalDayThumbnail from "@/assets/project-thumbnails/saudi-national-day.png";
 import desertOasisThumbnail from "@/assets/project-thumbnails/desert-oasis.png";
@@ -71,6 +72,7 @@ const AIProjectsSection = () => {
   return <section className="py-28 md:py-32 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
+          <SectionLabel label="Portfolio" />
           <h2 className="gradient-text inline-block">Digital Content Creation</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>
