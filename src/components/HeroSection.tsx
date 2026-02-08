@@ -33,6 +33,9 @@ const HeroSection = () => {
 
         {/* Hook Headline - Bold & Curiosity-Driven */}
         <div className="opacity-0 animate-fade-up animation-delay-200 space-y-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+            Tariq Mohmad Shiekh
+          </h2>
           <p className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-primary mb-4">
             Digital Storyteller & Content Creator
           </p>
