@@ -114,11 +114,9 @@ const ContactSection = () => {
       <div className="max-w-2xl mx-auto">
         {/* Section header */}
         <div className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold font-display gradient-text inline-block">
-            Get In Touch
-          </h2>
+          <h2 className="gradient-text inline-block">Get In Touch</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-6">
+          <p className="text-lead max-w-2xl mx-auto mt-6">
             Feel free to reach out if you'd like to connect or have any questions.
           </p>
         </div>

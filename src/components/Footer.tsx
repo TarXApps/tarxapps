@@ -16,7 +16,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
-          <p className="text-muted-foreground text-sm">
+          <p className="text-caption">
             Copyright © 2025 Tariq Mohmad Shiekh
           </p>
 
