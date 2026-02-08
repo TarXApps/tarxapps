@@ -51,7 +51,7 @@ const AboutSection = () => {
   }];
 
   return (
-    <section id="about" className="py-24 px-4 relative">
+    <section id="about" className="py-28 md:py-32 px-4 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">

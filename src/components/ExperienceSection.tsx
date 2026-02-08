@@ -202,7 +202,7 @@ const ExperienceSection = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-24 px-4 relative bg-muted/30">
+    <section id="experience" className="py-28 md:py-32 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div 

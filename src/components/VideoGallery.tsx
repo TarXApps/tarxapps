@@ -23,7 +23,7 @@ const VideoGallery = () => {
   };
 
   return (
-    <section id="videos" className="py-20 px-6 bg-background">
+    <section id="videos" className="py-28 md:py-32 px-6 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-up">

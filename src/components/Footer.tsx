@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-12 px-4 border-t border-border/30 relative">
+    <footer className="py-16 md:py-20 px-4 border-t border-border/30 relative">
       <div className="max-w-6xl mx-auto">
         {/* Social Links */}
         <div className="flex justify-center mb-8">
