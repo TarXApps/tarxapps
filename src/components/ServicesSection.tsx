@@ -1,5 +1,6 @@
 import { Film, Palette, Sparkles, Rocket, PenTool, Target, Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import SectionLabel from "./SectionLabel";
 
 const useInView = (options = {}) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -92,6 +93,7 @@ const ServicesSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
+          <SectionLabel label="Services" />
           <h2 className="gradient-text inline-block">What I Do</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
           <p className="text-lead mt-6 max-w-2xl mx-auto">

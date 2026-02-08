@@ -1,5 +1,6 @@
 import { Calendar, MapPin } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import SectionLabel from "./SectionLabel";
 
 const useInView = (options = {}) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -207,6 +208,7 @@ const ExperienceSection = () => {
             headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
+          <SectionLabel label="Experience" />
           <h2 className="gradient-text inline-block">Professional Experience</h2>
           <div 
             className={`w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full transition-all duration-700 delay-300 ${

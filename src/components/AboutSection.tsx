@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import SectionLabel from "./SectionLabel";
 
 const useInView = (options = {}) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,6 +31,7 @@ const AboutSection = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
+          <SectionLabel label="About" />
           <h2 className="gradient-text inline-block">About Me</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
         </div>

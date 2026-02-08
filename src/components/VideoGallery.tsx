@@ -1,4 +1,5 @@
 import { Play, Youtube } from "lucide-react";
+import SectionLabel from "./SectionLabel";
 
 const videos = [
   { id: "XLG_PfdkJss", title: "Featured Video 1" },
@@ -26,6 +27,7 @@ const VideoGallery = () => {
     <section id="videos" className="py-28 md:py-32 px-6 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
+          <SectionLabel label="Videos" />
           <h2 className="gradient-text inline-block mb-4">Featured Videos</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-coral to-gold mx-auto rounded-full" />
           <p className="text-lead mt-6 max-w-2xl mx-auto">

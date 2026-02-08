@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Mail, Send, RefreshCw } from "lucide-react";
+import SectionLabel from "./SectionLabel";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
@@ -114,6 +115,7 @@ const ContactSection = () => {
       <div className="max-w-2xl mx-auto">
         {/* Section header */}
         <div className="mb-12 text-center">
+          <SectionLabel label="Contact" />
           <h2 className="gradient-text inline-block">Get In Touch</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
           <p className="text-lead max-w-2xl mx-auto mt-6">
