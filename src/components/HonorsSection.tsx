@@ -98,7 +98,7 @@ const HonorsSection = () => {
   const appreciationCount = awards.filter(a => a.type === "appreciation").length;
 
   return (
-    <section id="honors" className="py-24 px-4 relative">
+    <section id="honors" className="py-28 md:py-32 px-4 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
