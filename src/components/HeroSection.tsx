@@ -1,62 +1,71 @@
-import { ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient effects */}
-      <div className="absolute inset-0 bg-background">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-pulse animation-delay-400" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse animation-delay-800" />
-      </div>
+    <section className="relative min-h-[100vh] flex items-center justify-center py-32 px-4">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20" />
+      
+      {/* Accent glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Profile Photo */}
-        <div className="opacity-0 animate-fade-up mb-8">
+        <div className="opacity-0 animate-fade-up mb-10">
           <div className="relative inline-block">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary via-coral to-gold rounded-full blur-xl opacity-50 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary via-coral to-gold rounded-full blur-2xl opacity-40 scale-110" />
             <img
               src={profilePhoto}
               alt="Tariq Mohmad Shiekh"
-              className="relative w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+              className="relative w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-primary/40 shadow-2xl"
             />
           </div>
         </div>
 
-        <div className="opacity-0 animate-fade-up animation-delay-200">
-          <p className="text-muted-foreground text-lg md:text-xl mb-4 tracking-wider uppercase">
-            Welcome
-          </p>
-        </div>
-
-        <h1 className="opacity-0 animate-fade-up animation-delay-400">
-          <span className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text font-display">
-            TARIQ MOHMAD
-          </span>
-          <span className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight gradient-text font-display mt-2">
-            SHIEKH
+        {/* Headline */}
+        <h1 className="opacity-0 animate-fade-up animation-delay-200">
+          <span className="block text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground font-display leading-tight">
+            Hi, I'm{" "}
+            <span className="gradient-text">Tariq Mohmad Shiekh</span>
           </span>
         </h1>
 
-        <p className="opacity-0 animate-fade-up animation-delay-600 text-xl md:text-2xl lg:text-3xl text-foreground/90 mt-8 mb-24 max-w-3xl mx-auto leading-relaxed">
-          Empowering audiences with meaningful digital experiences
+        {/* Subheadline */}
+        <p className="opacity-0 animate-fade-up animation-delay-400 text-lg md:text-xl lg:text-2xl text-muted-foreground mt-6 mb-12 max-w-2xl mx-auto leading-relaxed">
+          Digital content creator crafting meaningful experiences that inspire and engage audiences worldwide.
         </p>
-      </div>
 
-      {/* Scroll indicator */}
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in animation-delay-800 cursor-pointer"
-        aria-label="Scroll to about section"
-      >
-        <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
-      </button>
+        {/* CTA Buttons */}
+        <div className="opacity-0 animate-fade-up animation-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button
+            onClick={scrollToProjects}
+            size="lg"
+            className="px-8 py-6 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
+          >
+            View My Work
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+          <Button
+            onClick={scrollToContact}
+            variant="outline"
+            size="lg"
+            className="px-8 py-6 text-lg font-semibold border-2 border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+          >
+            Get in Touch
+          </Button>
+        </div>
+      </div>
     </section>
   );
 };
