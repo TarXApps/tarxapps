@@ -29,6 +29,7 @@ const HeroSection = () => {
               className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-primary/50 shadow-2xl"
             />
           </div>
+          <p className="mt-3 text-xs font-semibold text-foreground tracking-wide">Tariq Mohmad Shiekh</p>
         </div>
 
         {/* Hook Headline - Bold & Curiosity-Driven */}
