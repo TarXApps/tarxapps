@@ -33,8 +33,8 @@ const HeroSection = () => {
         </div>
 
         {/* Hook Headline - Bold & Curiosity-Driven */}
-        <div className="opacity-0 animate-fade-up animation-delay-200 space-y-3">
-          <p className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-primary mb-4">
+        <div className="opacity-0 animate-fade-up animation-delay-200 space-y-3 -mt-4">
+          <p className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-foreground mb-4">
             Digital Storyteller & Content Creator
           </p>
           <h1 className="gradient-text leading-[1.1] font-extrabold text-5xl md:text-7xl">
