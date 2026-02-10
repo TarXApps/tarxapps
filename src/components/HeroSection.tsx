@@ -26,18 +26,18 @@ const HeroSection = () => {
             <img
               src={profilePhoto}
               alt="Tariq Mohmad Shiekh"
-              className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-primary/50 shadow-2xl"
+              className="relative w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-2 border-primary/50 shadow-2xl"
             />
           </div>
-          <p className="mt-3 text-2xl font-semibold text-primary tracking-wide">Tariq Mohmad Shiekh</p>
+          <p className="mt-4 text-3xl font-semibold text-primary tracking-wide">Tariq Mohmad Shiekh</p>
         </div>
 
         {/* Hook Headline - Bold & Curiosity-Driven */}
-        <div className="opacity-0 animate-fade-up animation-delay-200 space-y-2">
-          <p className="text-sm md:text-base font-bold tracking-[0.2em] uppercase text-primary mb-4">
+        <div className="opacity-0 animate-fade-up animation-delay-200 space-y-3">
+          <p className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-primary mb-4">
             Digital Storyteller & Content Creator
           </p>
-          <h1 className="gradient-text leading-[1.1] font-extrabold">
+          <h1 className="gradient-text leading-[1.1] font-extrabold text-5xl md:text-7xl">
             Stories That Move.
             <br />
             <span className="text-foreground font-extrabold">Moments That Matter.</span>
