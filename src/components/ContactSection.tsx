@@ -111,10 +111,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-28 md:py-32 px-4 relative">
-      <div className="max-w-2xl mx-auto">
+    <section id="contact" className="py-32 md:py-40 px-4 relative">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[180px] pointer-events-none" />
+
+      <div className="relative z-10 max-w-2xl mx-auto">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div className="mb-20 text-center">
           <SectionLabel label="Contact" />
           <h2 className="gradient-text inline-block mb-6">Get In Touch</h2>
           <div className="flex items-center justify-center gap-2 mb-8">
@@ -122,8 +125,13 @@ const ContactSection = () => {
             <div className="h-2 w-2 rounded-full bg-secondary" />
             <div className="h-1 w-16 bg-gradient-to-l from-transparent to-primary rounded-full" />
           </div>
-          <p className="text-lead max-w-2xl mx-auto">
-            Feel free to reach out if you'd like to connect or have any questions.
+
+          {/* Strong CTA headline */}
+          <p className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Let's build something meaningful together.
+          </p>
+          <p className="text-lead max-w-xl mx-auto">
+            Ready to elevate your brand? I'd love to hear about your vision and explore how we can bring it to life.
           </p>
         </div>
 
