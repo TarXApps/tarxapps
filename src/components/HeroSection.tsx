@@ -44,8 +44,13 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        {/* Value-Driven Subheadline */}
-        <p className="opacity-0 animate-fade-up animation-delay-400 text-lead mt-8 mb-10 max-w-2xl mx-auto">
+        {/* Marketing Value Proposition */}
+        <p className="opacity-0 animate-fade-up animation-delay-400 text-xl md:text-2xl font-semibold text-primary/90 mt-8 mb-4 max-w-3xl mx-auto tracking-tight">
+          Helping brands grow through strategic content, digital storytelling, and high-impact marketing.
+        </p>
+
+        {/* Supporting Subheadline */}
+        <p className="opacity-0 animate-fade-up animation-delay-400 text-lead mb-10 max-w-2xl mx-auto">
           I craft digital experiences that don't just capture attention—they spark emotion, 
           inspire action, and leave a lasting impression.
         </p>
