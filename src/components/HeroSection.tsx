@@ -60,7 +60,7 @@ const HeroSection = () => {
           <Button
             onClick={scrollToProjects}
             size="lg"
-            className="group px-10 py-7 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
+            className="group px-10 py-7 text-lg font-semibold gradient-cta text-foreground hover:scale-[1.03] transition-all duration-300"
           >
             See How I Can Help Your Brand Grow
           </Button>
