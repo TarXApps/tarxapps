@@ -1,5 +1,25 @@
 import { Play, Youtube } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import SectionLabel from "./SectionLabel";
+
+const useInView = (options = {}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1, ...options });
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isInView };
+};
 
 const videos = [
   { id: "XLG_PfdkJss", title: "Featured Video 1" },
@@ -19,6 +39,9 @@ const videos = [
 ];
 
 const VideoGallery = () => {
+  const { ref: headerRef, isInView: headerInView } = useInView();
+  const { ref: gridRef, isInView: gridInView } = useInView();
+
   const openVideo = (videoId: string) => {
     window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
   };
@@ -26,7 +49,12 @@ const VideoGallery = () => {
   return (
     <section id="videos" className="py-28 md:py-32 px-6 bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20 animate-fade-up">
+        <div
+          ref={headerRef}
+          className={`text-center mb-20 transition-all duration-700 ${
+            headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <SectionLabel label="Videos" />
           <h2 className="gradient-text inline-block mb-6">Featured Videos</h2>
           <div className="flex items-center justify-center gap-2 mb-8">
@@ -40,13 +68,15 @@ const VideoGallery = () => {
         </div>
 
         {/* Video Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
+        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
           {videos.map((video, index) => (
             <div
               key={video.id}
               onClick={() => openVideo(video.id)}
-              className={`group relative cursor-pointer rounded-xl overflow-hidden border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 animate-fade-up`}
-              style={{ animationDelay: `${(index % 6) * 100}ms` }}
+              className={`group relative cursor-pointer rounded-xl overflow-hidden border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.03] ${
+                gridInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: `${Math.min(index * 60, 500)}ms` }}
             >
               {/* Thumbnail */}
               <div className="relative aspect-video overflow-hidden">

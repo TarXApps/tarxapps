@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -24,6 +24,25 @@ import {
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 
+const useInView = (options = {}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1, ...options });
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isInView };
+};
+
 const services = [
   "Graphic Designing",
   "Video Editing",
@@ -45,8 +64,9 @@ type FormValues = z.infer<typeof formSchema>;
 const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { ref: headerRef, isInView: headerInView } = useInView();
+  const { ref: formRef, isInView: formInView } = useInView();
 
-  // Generate random math captcha
   const generateCaptcha = () => {
     const num1 = Math.floor(Math.random() * 10) + 1;
     const num2 = Math.floor(Math.random() * 10) + 1;
@@ -57,12 +77,7 @@ const ContactSection = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      service: "",
-      captcha: "",
-    },
+    defaultValues: { name: "", email: "", service: "", captcha: "" },
   });
 
   const refreshCaptcha = () => {
@@ -71,7 +86,6 @@ const ContactSection = () => {
   };
 
   const onSubmit = async (data: FormValues) => {
-    // Validate captcha
     if (parseInt(data.captcha) !== captcha.answer) {
       form.setError("captcha", { message: "Incorrect answer. Please try again." });
       refreshCaptcha();
@@ -83,28 +97,16 @@ const ContactSection = () => {
     try {
       const { error } = await supabase
         .from("contact_submissions")
-        .insert({
-          name: data.name.trim(),
-          email: data.email.trim(),
-          service: data.service,
-        });
+        .insert({ name: data.name.trim(), email: data.email.trim(), service: data.service });
 
       if (error) throw error;
 
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-
+      toast({ title: "Message sent!", description: "Thank you for reaching out. I'll get back to you soon." });
       form.reset();
       refreshCaptcha();
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Failed to send message. Please try again.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
@@ -112,12 +114,15 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-32 md:py-40 px-4 relative">
-      {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/8 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl mx-auto">
-        {/* Section header */}
-        <div className="mb-20 text-center">
+        <div
+          ref={headerRef}
+          className={`mb-20 text-center transition-all duration-700 ${
+            headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <SectionLabel label="Contact" />
           <h2 className="gradient-text inline-block mb-6">Get In Touch</h2>
           <div className="flex items-center justify-center gap-2 mb-8">
@@ -125,8 +130,6 @@ const ContactSection = () => {
             <div className="h-2 w-2 rounded-full bg-secondary" />
             <div className="h-1 w-16 bg-gradient-to-l from-transparent to-primary rounded-full" />
           </div>
-
-          {/* Strong CTA headline */}
           <p className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Let's build something meaningful together.
           </p>
@@ -135,119 +138,75 @@ const ContactSection = () => {
           </p>
         </div>
 
-        {/* Contact form */}
-        <div className="glass-card p-8 rounded-2xl">
+        <div
+          ref={formRef}
+          className={`glass-card p-8 rounded-2xl transition-all duration-700 delay-200 ${
+            formInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              {/* Name field */}
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground">Name</FormLabel>
+              <FormField control={form.control} name="name" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your name" className="bg-background/50 border-border/50 focus:border-primary" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
+
+              <FormField control={form.control} name="email" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="your.email@example.com" className="bg-background/50 border-border/50 focus:border-primary" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
+
+              <FormField control={form.control} name="service" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">Service of Interest</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
-                      <Input
-                        placeholder="Your name"
-                        className="bg-background/50 border-border/50 focus:border-primary"
-                        {...field}
-                      />
+                      <SelectTrigger className="bg-background/50 border-border/50 focus:border-primary">
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
                     </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                    <SelectContent className="bg-background border-border">
+                      {services.map((service) => (
+                        <SelectItem key={service} value={service}>{service}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )} />
 
-              {/* Email field */}
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground">Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="your.email@example.com"
-                        className="bg-background/50 border-border/50 focus:border-primary"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              {/* Service dropdown */}
-              <FormField
-                control={form.control}
-                name="service"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground">Service of Interest</FormLabel>
-                    <Select onValueChange={field.onChange} value={field.value}>
-                      <FormControl>
-                        <SelectTrigger className="bg-background/50 border-border/50 focus:border-primary">
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent className="bg-background border-border">
-                        {services.map((service) => (
-                          <SelectItem key={service} value={service}>
-                            {service}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              {/* Captcha */}
-              <FormField
-                control={form.control}
-                name="captcha"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-foreground">Security Check</FormLabel>
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20">
-                        <span className="text-lg font-mono font-semibold text-foreground">
-                          {captcha.num1} + {captcha.num2} = ?
-                        </span>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={refreshCaptcha}
-                        className="p-2 rounded-lg hover:bg-muted transition-colors"
-                        aria-label="Refresh captcha"
-                      >
-                        <RefreshCw className="w-5 h-5 text-muted-foreground" />
-                      </button>
+              <FormField control={form.control} name="captcha" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-foreground">Security Check</FormLabel>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/20">
+                      <span className="text-lg font-mono font-semibold text-foreground">
+                        {captcha.num1} + {captcha.num2} = ?
+                      </span>
                     </div>
-                    <FormControl>
-                      <Input
-                        type="number"
-                        placeholder="Enter the answer"
-                        className="bg-background/50 border-border/50 focus:border-primary mt-2"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                    <button type="button" onClick={refreshCaptcha} className="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Refresh captcha">
+                      <RefreshCw className="w-5 h-5 text-muted-foreground" />
+                    </button>
+                  </div>
+                  <FormControl>
+                    <Input type="number" placeholder="Enter the answer" className="bg-background/50 border-border/50 focus:border-primary mt-2" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
 
-              {/* Submit button */}
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold py-6 rounded-full glow-effect transition-all duration-300 hover:scale-[1.02]"
-              >
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
+              <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold py-6 rounded-full glow-effect transition-all duration-300 hover:scale-[1.02]">
+                {isSubmitting ? "Sending..." : (
                   <>
                     <Send className="w-5 h-5 mr-2" />
                     Send Message
@@ -257,13 +216,9 @@ const ContactSection = () => {
             </form>
           </Form>
 
-          {/* Direct email option */}
           <div className="mt-8 pt-6 border-t border-border/50 text-center">
             <p className="text-sm text-muted-foreground mb-2">Or email me directly</p>
-            <a
-              href="mailto:shiekhtariq007@gmail.com"
-              className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"
-            >
+            <a href="mailto:shiekhtariq007@gmail.com" className="inline-flex items-center gap-2 text-primary hover:underline transition-colors">
               <Mail className="w-4 h-4" />
               shiekhtariq007@gmail.com
             </a>

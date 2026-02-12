@@ -1,7 +1,27 @@
 import { ExternalLink, Globe, Youtube, Smartphone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import atInternationalThumb from "@/assets/project-thumbnails/at-international.png";
 import crickmateThumb from "@/assets/project-thumbnails/crickmate.png";
 import SectionLabel from "./SectionLabel";
+
+const useInView = (options = {}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1, ...options });
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isInView };
+};
 
 const projects = [
   {
@@ -31,6 +51,9 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const { ref: headerRef, isInView: headerInView } = useInView();
+  const { ref: gridRef, isInView: gridInView } = useInView();
+
   const openProject = (url: string | null) => {
     if (url) {
       window.open(url, "_blank", "noopener,noreferrer");
@@ -40,7 +63,12 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-28 md:py-32 px-4 relative bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
+        <div
+          ref={headerRef}
+          className={`text-center mb-20 transition-all duration-700 ${
+            headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <SectionLabel label="Work" />
           <h2 className="gradient-text inline-block mb-6">My Recent Projects</h2>
           <div className="flex items-center justify-center gap-2">
@@ -50,8 +78,7 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Compact portfolio grid matching other sections */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
+        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
           {projects.map((project, index) => {
             const Icon = project.icon;
 
@@ -59,7 +86,10 @@ const ProjectsSection = () => {
               <div
                 key={index}
                 onClick={() => openProject(project.url)}
-                className="group relative aspect-video rounded-xl overflow-hidden bg-card border border-border/50 cursor-pointer transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:scale-105"
+                className={`group relative aspect-video rounded-xl overflow-hidden bg-card border border-border/50 cursor-pointer transition-all duration-500 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:scale-105 ${
+                  gridInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 120}ms` }}
               >
                 {/* Thumbnail */}
                 {project.type === "youtube" && project.videoId ? (
@@ -82,7 +112,7 @@ const ProjectsSection = () => {
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3">
-                  <ExternalLink className="w-8 h-8 text-primary mb-2" />
+                  <ExternalLink className="w-8 h-8 text-primary mb-2 transition-transform duration-300 group-hover:scale-110" />
                   <span className="text-sm font-medium text-foreground text-center line-clamp-1">{project.title}</span>
                 </div>
 
