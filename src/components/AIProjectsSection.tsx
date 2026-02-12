@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import SectionLabel from "./SectionLabel";
 import worldEvDayThumbnail from "@/assets/project-thumbnails/world-ev-day.png";
 import saudiNationalDayThumbnail from "@/assets/project-thumbnails/saudi-national-day.png";
@@ -9,69 +10,57 @@ import latestInnovationThumbnail from "@/assets/project-thumbnails/latest-innova
 import evAutoShowPassThumbnail from "@/assets/project-thumbnails/ev-auto-show-pass.png";
 import evAutoShowLogoThumbnail from "@/assets/project-thumbnails/ev-auto-show-logo.png";
 import educationExpoThumbnail from "@/assets/project-thumbnails/education-expo.png";
-const projects = [{
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7371125329442045952/",
-  type: "linkedin",
-  title: "World EV Day - Driving Change",
-  thumbnail: worldEvDayThumbnail
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7299075683446571008/",
-  type: "linkedin",
-  title: "Saudi National Day",
-  thumbnail: saudiNationalDayThumbnail
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7166466845179420673/",
-  type: "linkedin",
-  title: "Desert Oasis",
-  thumbnail: desertOasisThumbnail
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7336413662947004417/",
-  type: "linkedin",
-  title: "World Environment Day",
-  thumbnail: worldEnvironmentDayThumbnail
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7219985707967107074/",
-  type: "linkedin",
-  title: "EV Auto Show Riyadh",
-  thumbnail: evAutoShowRiyadhThumbnail
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7106633936952262656/",
-  type: "linkedin",
-  title: "Latest Innovation",
-  thumbnail: latestInnovationThumbnail
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7106260617270898688/",
-  type: "linkedin",
-  title: "EV Auto Show Pass",
-  thumbnail: evAutoShowPassThumbnail
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7050016790025842688/",
-  type: "linkedin",
-  title: "EV Auto Show",
-  thumbnail: evAutoShowLogoThumbnail
-}, {
-  url: "https://www.youtube.com/watch?v=HHuTL-d-cHI",
-  type: "youtube",
-  title: "AI Video 1",
-  videoId: "HHuTL-d-cHI"
-}, {
-  url: "https://www.youtube.com/watch?v=wZlSXh08wkg",
-  type: "youtube",
-  title: "AI Video 2",
-  videoId: "wZlSXh08wkg"
-}, {
-  url: "https://www.linkedin.com/feed/update/urn:li:activity:7028327886218477568/",
-  type: "linkedin",
-  title: "Education & Future Job Expo",
-  thumbnail: educationExpoThumbnail
-}];
+
+const useInView = (options = {}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsInView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1, ...options });
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isInView };
+};
+
+const projects = [
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7371125329442045952/", type: "linkedin", title: "World EV Day - Driving Change", thumbnail: worldEvDayThumbnail },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7299075683446571008/", type: "linkedin", title: "Saudi National Day", thumbnail: saudiNationalDayThumbnail },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7166466845179420673/", type: "linkedin", title: "Desert Oasis", thumbnail: desertOasisThumbnail },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7336413662947004417/", type: "linkedin", title: "World Environment Day", thumbnail: worldEnvironmentDayThumbnail },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7219985707967107074/", type: "linkedin", title: "EV Auto Show Riyadh", thumbnail: evAutoShowRiyadhThumbnail },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7106633936952262656/", type: "linkedin", title: "Latest Innovation", thumbnail: latestInnovationThumbnail },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7106260617270898688/", type: "linkedin", title: "EV Auto Show Pass", thumbnail: evAutoShowPassThumbnail },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7050016790025842688/", type: "linkedin", title: "EV Auto Show", thumbnail: evAutoShowLogoThumbnail },
+  { url: "https://www.youtube.com/watch?v=HHuTL-d-cHI", type: "youtube", title: "AI Video 1", videoId: "HHuTL-d-cHI" },
+  { url: "https://www.youtube.com/watch?v=wZlSXh08wkg", type: "youtube", title: "AI Video 2", videoId: "wZlSXh08wkg" },
+  { url: "https://www.linkedin.com/feed/update/urn:li:activity:7028327886218477568/", type: "linkedin", title: "Education & Future Job Expo", thumbnail: educationExpoThumbnail },
+];
+
 const AIProjectsSection = () => {
+  const { ref: headerRef, isInView: headerInView } = useInView();
+  const { ref: gridRef, isInView: gridInView } = useInView();
+
   const openProject = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
-  return <section className="py-28 md:py-32 px-4 relative">
+
+  return (
+    <section className="py-28 md:py-32 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
+        <div
+          ref={headerRef}
+          className={`text-center mb-20 transition-all duration-700 ${
+            headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <SectionLabel label="Portfolio" />
           <h2 className="gradient-text inline-block mb-6">Digital Content Creation</h2>
           <div className="flex items-center justify-center gap-2">
@@ -81,9 +70,22 @@ const AIProjectsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
-          {projects.map((project, index) => <div key={index} onClick={() => openProject(project.url)} className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              {project.type === "youtube" && project.videoId ? <img src={`https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`} alt={project.title} className="w-full h-full object-cover" /> : project.thumbnail ? <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" /> : <div className="w-full h-full bg-gradient-to-br from-primary/20 to-violet-500/20 flex items-center justify-center">
+        <div ref={gridRef} className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              onClick={() => openProject(project.url)}
+              className={`group relative aspect-square rounded-lg overflow-hidden cursor-pointer bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 ${
+                gridInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: `${Math.min(index * 60, 500)}ms` }}
+            >
+              {project.type === "youtube" && project.videoId ? (
+                <img src={`https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              ) : project.thumbnail ? (
+                <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-violet-500/20 flex items-center justify-center">
                   <div className="text-center p-4">
                     <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/20 flex items-center justify-center">
                       <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="currentColor">
@@ -92,27 +94,31 @@ const AIProjectsSection = () => {
                     </div>
                     <span className="text-xs text-muted-foreground">LinkedIn</span>
                   </div>
-                </div>}
-              
+                </div>
+              )}
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center">
-                  <ExternalLink className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <ExternalLink className="w-8 h-8 text-primary mx-auto mb-2 transition-transform duration-300 group-hover:scale-110" />
                   <span className="text-sm font-medium text-foreground">View Project</span>
                 </div>
               </div>
 
               {/* Platform Badge */}
               <div className="absolute top-2 right-2">
-                {project.type === "youtube" ? <div className="bg-red-600 text-white text-xs px-2 py-1 rounded-full font-medium">
-                    YouTube
-                  </div> : <div className="bg-[#0A66C2] text-white text-xs px-2 py-1 rounded-full font-medium">
-                    LinkedIn
-                  </div>}
+                {project.type === "youtube" ? (
+                  <div className="bg-red-600 text-white text-xs px-2 py-1 rounded-full font-medium">YouTube</div>
+                ) : (
+                  <div className="bg-[#0A66C2] text-white text-xs px-2 py-1 rounded-full font-medium">LinkedIn</div>
+                )}
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AIProjectsSection;
