@@ -9,6 +9,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import AIProjectsSection from "@/components/AIProjectsSection";
 import VideoGallery from "@/components/VideoGallery";
 import ContactSection from "@/components/ContactSection";
+import WhyWorkWithMeSection from "@/components/WhyWorkWithMeSection";
 import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
 
@@ -29,6 +30,8 @@ const Index = () => {
       <AIProjectsSection />
       <SectionDivider />
       <VideoGallery />
+      <WhyWorkWithMeSection />
+      <SectionDivider />
       <ContactSection />
       <Footer />
     </main>
