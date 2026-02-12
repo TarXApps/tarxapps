@@ -24,8 +24,8 @@ const useInView = (options = {}) => {
 const strengths = [
   {
     icon: Award,
-    title: "18+ Years of Experience",
-    description: "Nearly two decades of hands-on expertise in content creation, digital marketing, and brand storytelling across diverse industries.",
+    title: "20+ Years of Experience",
+    description: "Two decades of hands-on expertise in content creation, digital marketing, and brand storytelling across diverse industries.",
   },
   {
     icon: Brain,
