@@ -62,8 +62,7 @@ const HeroSection = () => {
             size="lg"
             className="group px-10 py-7 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300"
           >
-            <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-            Explore My Work
+            See How I Can Help Your Brand Grow
           </Button>
           
           {/* Scroll Indicator */}
