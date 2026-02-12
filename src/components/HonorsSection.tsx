@@ -78,12 +78,12 @@ const getAwardIcon = (type: AwardType) => {
 const getAwardColor = (type: AwardType) => {
   switch (type) {
     case "valuable":
-      return "text-amber-500";
+      return "text-gold";
     case "best":
     case "staff":
-      return "text-yellow-400";
+      return "text-accent";
     case "promising":
-      return "text-emerald-500";
+      return "text-secondary";
     default:
       return "text-primary";
   }
@@ -120,15 +120,15 @@ const HonorsSection = () => {
           }`}
         >
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">
-            <div className="text-3xl font-bold font-display text-amber-500">{valuableCount}</div>
+            <div className="text-3xl font-bold font-display text-gold">{valuableCount}</div>
             <p className="text-caption">Valuable Staff Awards</p>
           </div>
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">
-            <div className="text-3xl font-bold font-display text-emerald-500">{promisingCount}</div>
+            <div className="text-3xl font-bold font-display text-secondary">{promisingCount}</div>
             <p className="text-caption">Promising Staff Awards</p>
           </div>
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">
-            <div className="text-3xl font-bold font-display text-yellow-400">{specialCount}</div>
+            <div className="text-3xl font-bold font-display text-accent">{specialCount}</div>
             <p className="text-caption">Special Recognition</p>
           </div>
           <div className="text-center p-4 rounded-xl bg-card/50 border border-border/50">

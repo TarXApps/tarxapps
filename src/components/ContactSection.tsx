@@ -205,7 +205,7 @@ const ContactSection = () => {
                 </FormItem>
               )} />
 
-              <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold py-6 rounded-full glow-effect transition-all duration-300 hover:scale-[1.02]">
+              <Button type="submit" disabled={isSubmitting} className="w-full gradient-cta text-foreground font-semibold py-6 rounded-full transition-all duration-300 hover:scale-[1.02]">
                 {isSubmitting ? "Sending..." : (
                   <>
                     <Send className="w-5 h-5 mr-2" />
