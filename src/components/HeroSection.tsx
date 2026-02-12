@@ -44,9 +44,9 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        {/* Marketing Value Proposition */}
-        <p className="opacity-0 animate-fade-up animation-delay-400 text-xl md:text-2xl font-semibold text-primary/90 mt-8 mb-4 max-w-3xl mx-auto tracking-tight">
-          Helping brands grow through strategic content, digital storytelling, and high-impact marketing.
+        {/* Strategic Marketing Value Line */}
+        <p className="opacity-0 animate-fade-up animation-delay-400 text-xl md:text-2xl font-bold text-primary mt-10 mb-5 max-w-3xl mx-auto leading-relaxed tracking-tight">
+          Empowering brands with high-impact content, digital strategy, and competitive storytelling that drives growth.
         </p>
 
         {/* Supporting Subheadline */}
