@@ -48,16 +48,16 @@ const AboutSection = () => {
           }`}
         >
           <p className="text-lead text-foreground/90">
-            I don't just create content—I build <span className="text-secondary font-semibold">creative marketing solutions</span> that help brands grow, connect, and convert. From conversion-focused storytelling to full-scale digital strategy, every piece of work I deliver is designed to elevate your <span className="text-secondary font-semibold">brand visibility</span> and drive real audience engagement.
+            I don't just create content—I build <span className="text-secondary font-semibold">creative marketing solutions</span> that help brands grow, connect, and convert. Every project is crafted to elevate your <span className="text-secondary font-semibold">brand visibility</span> and drive real audience engagement.
           </p>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            My approach blends empathy-driven narratives with data-informed strategy—because great marketing isn't just seen, it's felt. Whether it's a cinematic brand film, a scroll-stopping social campaign, or a content performance roadmap, I craft experiences that strengthen customer experience and turn viewers into loyal advocates.
+            My approach blends empathy-driven storytelling with data-informed strategy—because great marketing isn't just seen, it's felt. From cinematic brand films to scroll‑stopping campaigns, I create experiences that strengthen customer connection and turn viewers into loyal advocates.
           </p>
           <p className="text-lead text-foreground/90 font-semibold">
             "We ensure that your product <span className="text-secondary">shines brighter</span> than your competition."
           </p>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            Beyond content, I help businesses build their digital presence through modern websites, mobile apps, and platform-ready content. By combining creativity, strategy, and technology, I deliver measurable impact—so your brand doesn't just show up online, it stands out.
+            Beyond content, I help businesses build their digital presence through modern websites, mobile apps, and platform-ready experiences. By combining creativity, strategy, and technology, I deliver measurable impact—so your brand doesn't just show up online, it stands out.
           </p>
         </div>
       </div>
