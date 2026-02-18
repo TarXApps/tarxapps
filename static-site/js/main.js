@@ -242,10 +242,16 @@
       });
     }
 
-    // Back to top button
-    const backToTopBtn = document.querySelector('.back-to-top');
+    // Back to top button (supports both class names)
+    const backToTopBtn = document.querySelector('.back-to-top-btn, .back-to-top');
     if (backToTopBtn) {
       backToTopBtn.addEventListener('click', scrollToTop);
+    }
+
+    // Dynamic footer year
+    const footerYear = document.getElementById('footerYear');
+    if (footerYear) {
+      footerYear.textContent = new Date().getFullYear();
     }
 
     // Project cards (clickable)
