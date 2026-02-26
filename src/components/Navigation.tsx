@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Rocket } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -45,8 +45,9 @@ const Navigation = () => {
           {/* Logo/Name */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-display font-bold text-lg gradient-text"
+            className="flex items-center gap-1.5 font-display font-bold text-lg gradient-text"
           >
+            <Rocket className="w-5 h-5" />
             TMS
           </button>
 
