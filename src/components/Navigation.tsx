@@ -47,7 +47,7 @@ const Navigation = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-1.5 font-display font-bold text-lg gradient-text">
 
-            <Rocket className="w-5 h-5 rounded-md text-violet-500" />
+            <Rocket className="rounded-md text-violet-500 w-[27px] h-[27px] border-none border-violet-700" />
             TMS
           </button>
 
