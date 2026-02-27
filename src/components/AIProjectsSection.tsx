@@ -10,6 +10,7 @@ import latestInnovationThumbnail from "@/assets/project-thumbnails/latest-innova
 import evAutoShowPassThumbnail from "@/assets/project-thumbnails/ev-auto-show-pass.png";
 import evAutoShowLogoThumbnail from "@/assets/project-thumbnails/ev-auto-show-logo.png";
 import educationExpoThumbnail from "@/assets/project-thumbnails/education-expo.png";
+import ramadanKareemThumbnail from "@/assets/project-thumbnails/ramadan-kareem.png";
 
 const useInView = (options = {}) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ const useInView = (options = {}) => {
 };
 
 const projects = [
+  { url: "https://www.linkedin.com/posts/ev-auto-show-riyadh_ramadhan-kareem-wishing-our-ev-community-activity-7430153793259978752-3a-x?utm_source=share&utm_medium=member_desktop&rcm=ACoAABRSgQgB-3FGf5dS8MIvbDQpsWnnHEMQTzA", type: "linkedin", title: "Ramadan Kareem", thumbnail: ramadanKareemThumbnail },
   { url: "https://www.linkedin.com/feed/update/urn:li:activity:7371125329442045952/", type: "linkedin", title: "World EV Day - Driving Change", thumbnail: worldEvDayThumbnail },
   { url: "https://www.linkedin.com/feed/update/urn:li:activity:7299075683446571008/", type: "linkedin", title: "Saudi National Day", thumbnail: saudiNationalDayThumbnail },
   { url: "https://www.linkedin.com/feed/update/urn:li:activity:7166466845179420673/", type: "linkedin", title: "Desert Oasis", thumbnail: desertOasisThumbnail },
