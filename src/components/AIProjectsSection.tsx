@@ -11,6 +11,7 @@ import evAutoShowPassThumbnail from "@/assets/project-thumbnails/ev-auto-show-pa
 import evAutoShowLogoThumbnail from "@/assets/project-thumbnails/ev-auto-show-logo.png";
 import educationExpoThumbnail from "@/assets/project-thumbnails/education-expo.png";
 import ramadanKareemThumbnail from "@/assets/project-thumbnails/ramadan-kareem.png";
+import eidMubarakThumbnail from "@/assets/project-thumbnails/eid-mubarak.png";
 
 const useInView = (options = {}) => {
   const ref = useRef<HTMLDivElement>(null);
