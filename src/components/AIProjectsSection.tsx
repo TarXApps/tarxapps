@@ -10,7 +10,7 @@ import latestInnovationThumbnail from "@/assets/project-thumbnails/latest-innova
 import evAutoShowPassThumbnail from "@/assets/project-thumbnails/ev-auto-show-pass.png";
 import evAutoShowLogoThumbnail from "@/assets/project-thumbnails/ev-auto-show-logo.png";
 import educationExpoThumbnail from "@/assets/project-thumbnails/education-expo.png";
-import ramadanKareemThumbnail from "@/assets/project-thumbnails/ramadan-kareem.png";
+import ramadanKareemThumbnail from "@/assets/project-thumbnails/ramadan-kareem.jpg";
 import eidMubarakThumbnail from "@/assets/project-thumbnails/eid-mubarak.png";
 
 const useInView = (options = {}) => {
