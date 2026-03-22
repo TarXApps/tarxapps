@@ -33,6 +33,7 @@ const useInView = (options = {}) => {
 };
 
 const projects = [
+  { url: "https://www.linkedin.com/posts/ev-auto-show-riyadh_eid-mubarak-from-all-of-us-at-ev-auto-ugcPost-7440445093490343936-8vAz?utm_source=share&utm_medium=member_desktop&rcm=ACoAABRSgQgB-3FGf5dS8MIvbDQpsWnnHEMQTzA", type: "linkedin", title: "Eid Mubarak", thumbnail: eidMubarakThumbnail },
   { url: "https://www.linkedin.com/posts/ev-auto-show-riyadh_ramadhan-kareem-wishing-our-ev-community-activity-7430153793259978752-3a-x?utm_source=share&utm_medium=member_desktop&rcm=ACoAABRSgQgB-3FGf5dS8MIvbDQpsWnnHEMQTzA", type: "linkedin", title: "Ramadan Kareem", thumbnail: ramadanKareemThumbnail },
   { url: "https://www.linkedin.com/feed/update/urn:li:activity:7371125329442045952/", type: "linkedin", title: "World EV Day - Driving Change", thumbnail: worldEvDayThumbnail },
   { url: "https://www.linkedin.com/feed/update/urn:li:activity:7299075683446571008/", type: "linkedin", title: "Saudi National Day", thumbnail: saudiNationalDayThumbnail },
