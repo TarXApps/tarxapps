@@ -5795,3 +5795,8 @@ section.ms-instagram-section {
   max-width: 100;
   border-radius: 15px;
 }
+/* Keep the logo visible when the header turns white on scroll (white text -> dark, blue accent stays blue) */
+.ms-fixed .navbar-brand img {
+  -webkit-filter: invert(1) hue-rotate(180deg);
+          filter: invert(1) hue-rotate(180deg);
+}
