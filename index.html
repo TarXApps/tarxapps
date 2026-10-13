@@ -916,20 +916,22 @@ Author URI: https://themeforest.net/user/ashishmaraviya
                     <iframe src="//maps.google.com/maps?q=34.0837,74.7973&z=12&output=embed" allowfullscreen=""></iframe>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-                    <form>
+                    <form id="contact-form" novalidate>
                         <div class="form-group" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-                            <input type="text" class="form-control" id="fname" placeholder="Full Name">
+                            <input type="text" class="form-control" id="fname" name="name" placeholder="Full Name" required>
                         </div>
                         <div class="form-group" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
-                          <input type="email" class="form-control" id="umail" placeholder="Email">
+                          <input type="email" class="form-control" id="umail" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
-                            <input type="text" class="form-control" id="phone" placeholder="Phone">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
                         </div>
                         <div class="form-group" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3" placeholder="Message" required></textarea>
                         </div>
+                        <div style="position:absolute;left:-9999px;" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                         <button type="submit" class="custom-btn ms-btn-1" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">Submit</button>
+                        <p id="contact-status" role="status" style="margin-top:14px;font-weight:600;"></p>
                       </form>
                 </div>
             </div>
@@ -1090,6 +1092,36 @@ $(function () {
             </div>
         <p class="rd-note">Examples are real comments and replies, shortened where marked [&hellip;] to leave out rude language. They were written by the first, Gemini-powered version; the YouTube responder now runs on Claude.</p>
     </div>
+
+    <script>
+    (function () {
+        var f = document.getElementById('contact-form');
+        if (!f) return;
+        var st = document.getElementById('contact-status');
+        var btn = f.querySelector('button[type="submit"]');
+        f.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var email = f.email.value.trim(), msg = f.message.value.trim();
+            if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || !msg) {
+                st.style.color = '#c0392b';
+                st.textContent = 'Please enter a valid email and a message.';
+                return;
+            }
+            btn.disabled = true; st.style.color = ''; st.textContent = 'Sending...';
+            fetch('https://tarixspace.app.n8n.cloud/webhook/tarxspace-contact', {
+                method: 'POST',
+                body: new URLSearchParams(new FormData(f))
+            }).then(function (r) {
+                if (!r.ok) throw new Error('bad status');
+                f.reset(); st.style.color = '#1e8449';
+                st.textContent = 'Thank you! Your message has been sent. I will get back to you soon.';
+            }).catch(function () {
+                st.style.color = '#c0392b';
+                st.textContent = 'Sorry, something went wrong. Please try again or email me directly.';
+            }).then(function () { btn.disabled = false; });
+        });
+    })();
+    </script>
 </body>
 
 </html>
