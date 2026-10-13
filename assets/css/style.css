@@ -5860,3 +5860,6 @@ section.ms-instagram-section {
 .responder-demo .rd-out { margin: 8px 0 0 auto; background: #e6eeff; border-top-right-radius: 4px; }
 .responder-demo .rd-note { margin: 4px 0 0; font-size: 12.5px; line-height: 19px; color: #777; }
 @media (max-width: 575px) { .responder-demo { padding: 24px 18px 20px; } .responder-demo .rd-bubble { max-width: 100%; } }
+
+/* Portfolio cards: hide the dark label stickers over thumbnails */
+.hovereffect .portfolio-img h3 { display: none; }
