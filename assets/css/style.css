@@ -5800,3 +5800,13 @@ section.ms-instagram-section {
   -webkit-filter: invert(1) hue-rotate(180deg);
           filter: invert(1) hue-rotate(180deg);
 }
+/* Hero: always stack - photo on top, text centred below (desktop too) */
+@media only screen and (min-width: 992px) {
+  .ms-home { height: auto !important; min-height: 100vh; }
+  .ms-home .container { height: auto; min-height: 100vh; }
+  .ms-row { flex-direction: column; height: auto; min-height: 100vh; padding: 110px 0 140px; }
+  .ms-home .profile-img { max-width: 290px; margin-bottom: 45px; }
+  .ms-home .profile-img:after { width: 200px; height: 200px; }
+  .ms-home .ms-detail { text-align: center; padding: 0 15px; }
+  .ms-home .ms-detail .info { max-width: 700px; margin: 0 auto; }
+}
