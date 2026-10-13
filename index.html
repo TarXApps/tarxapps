@@ -730,11 +730,11 @@ Author URI: https://themeforest.net/user/ashishmaraviya
                                             <div class="hovereffect">
                                                 <div class="portfolio-img">
                                                     <img src="assets/img/portfolio/n8n.jpg" alt="SpaceStallionX Comment Responder">
-                                                    <h3><span>Comment Responder</span><span>n8n &middot; Claude Automation</span></h3>
+                                                    <h3><span>Comment Responder</span><span>n8n &middot; AI Automation</span></h3>
                                                 </div>
                                                 <div class="overlay">
                                                     <div class="overlay-info">
-                                            <a class="info" data-fancybox="gallery" href="assets/img/portfolio/n8n-big.jpg"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                            <a class="info" data-fancybox data-src="#responder-demo" href="javascript:;" title="See auto-replies in action"><i class="fa fa-comments" aria-hidden="true"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1011,6 +1011,46 @@ $(function () {
     });
 });
 </script>
+
+    <!-- Comment Responder demo (opens from the portfolio card) -->
+    <div id="responder-demo" class="responder-demo" style="display:none">
+        <h3>SpaceStallionX Comment Responder</h3>
+        <p class="rd-lead">An automated workflow, built with n8n and AI, that replies to viewer comments on the SpaceStallionX YouTube channel and Facebook page.</p>
+        <ol class="rd-flow">
+            <li>New comment arrives</li>
+            <li>n8n filters spam and repeats</li>
+            <li>AI writes a short reply</li>
+            <li>Reply is posted and logged</li>
+        </ol>
+        <p class="rd-stat"><b>1,100+</b> replies posted automatically on YouTube, with a log that prevents duplicate replies.</p>
+        <h4>Real examples</h4>
+            <div class="rd-ex">
+                <div class="rd-meta"><span class="rd-badge rd-youtube">YouTube</span><a class="rd-link" href="https://www.youtube.com/watch?v=iCDCB8gbq9c&amp;lc=Ugwj7SOmytdVngvGXYF4AaABAg" target="_blank" rel="noopener">View comment &#8599;</a></div>
+                <div class="rd-bubble rd-in"><span class="rd-who">Viewer</span>&ldquo;Hollywood studios were the videos were recorded forgot to add some stars to the footage that&rsquo;s why the sky look like a black sheet, [&hellip;]&rdquo;</div>
+                <div class="rd-bubble rd-out"><span class="rd-who">Auto-reply &middot; SpaceStallionX</span>It&rsquo;s actually because the surface of the moon is so bright that the cameras had to use a short exposure, which makes the faint stars disappear.</div>
+            </div>
+            <div class="rd-ex">
+                <div class="rd-meta"><span class="rd-badge rd-youtube">YouTube</span><a class="rd-link" href="https://www.youtube.com/watch?v=iCDCB8gbq9c&amp;lc=Ugxuq5701HbuPrMxFhF4AaABAg" target="_blank" rel="noopener">View comment &#8599;</a></div>
+                <div class="rd-bubble rd-in"><span class="rd-who">Viewer</span>&ldquo;&lsquo;Though it is a fine material yet it is very coarse&rsquo; you don&rsquo;t seem to understand the definition of &lsquo;fine material&rsquo; or the definition of &lsquo;coarse&rsquo;&hellip; However it would be accurate to call lunar dust an abrasive.&rdquo;</div>
+                <div class="rd-bubble rd-out"><span class="rd-who">Auto-reply &middot; SpaceStallionX</span>You&rsquo;re right, abrasive is definitely the better word for it since it acts like tiny shards of glass. Thanks for the catch!</div>
+            </div>
+            <div class="rd-ex">
+                <div class="rd-meta"><span class="rd-badge rd-youtube">YouTube</span><a class="rd-link" href="https://www.youtube.com/watch?v=iCDCB8gbq9c&amp;lc=Ugzmk3kDT-G7tXsfUUp4AaABAg" target="_blank" rel="noopener">View comment &#8599;</a></div>
+                <div class="rd-bubble rd-in"><span class="rd-who">Viewer</span>&ldquo;MEXICAN ASTRONAUTS DID NOT VISIT THE MOON EVER. LIE.&rdquo;</div>
+                <div class="rd-bubble rd-out"><span class="rd-who">Auto-reply &middot; SpaceStallionX</span>You&rsquo;re right, no Mexican astronauts have walked on the moon yet, but Rodolfo Neri Vela did go to space on the shuttle back in 85.</div>
+            </div>
+            <div class="rd-ex">
+                <div class="rd-meta"><span class="rd-badge rd-facebook">Facebook</span></div>
+                <div class="rd-bubble rd-in"><span class="rd-who">Viewer</span>&ldquo;What do you call &ldquo;eventually&rdquo;? Nothing drifts forever, but he might take hundreds of billions of years to finally fall into another object&rsquo;s gravity well.&rdquo;</div>
+                <div class="rd-bubble rd-out"><span class="rd-who">Auto-reply &middot; SpaceStallionX</span>True, &ldquo;eventually&rdquo; in space is a whole different ballgame. it could definitely be billions of years of just floating in the void. Time scales out there are just wild to think about.</div>
+            </div>
+            <div class="rd-ex">
+                <div class="rd-meta"><span class="rd-badge rd-facebook">Facebook</span></div>
+                <div class="rd-bubble rd-in"><span class="rd-who">Viewer</span>&ldquo;It will evaporate instantly&rdquo;</div>
+                <div class="rd-bubble rd-out"><span class="rd-who">Auto-reply &middot; SpaceStallionX</span>pretty much lol. space is brutal like that, wouldnt stand a chance.</div>
+            </div>
+        <p class="rd-note">Examples are real comments and replies, shortened where marked [&hellip;] to leave out rude language. They were written by the first, Gemini-powered version; the YouTube responder now runs on Claude.</p>
+    </div>
 </body>
 
 </html>
