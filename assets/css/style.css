@@ -5861,5 +5861,37 @@ section.ms-instagram-section {
 .responder-demo .rd-note { margin: 4px 0 0; font-size: 12.5px; line-height: 19px; color: #777; }
 @media (max-width: 575px) { .responder-demo { padding: 24px 18px 20px; } .responder-demo .rd-bubble { max-width: 100%; } }
 
-/* Portfolio cards: hide the dark label stickers over thumbnails */
-.hovereffect .portfolio-img h3 { display: none; }
+/* Portfolio cards: small caption, bottom-left of each thumbnail */
+.hovereffect .portfolio-img h3 {
+  display: block;
+  top: auto;
+  right: auto;
+  left: 10px;
+  bottom: 10px;
+  max-width: calc(100% - 20px);
+  padding: 5px 10px 6px;
+  background: rgba(15, 16, 20, 0.62);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  text-align: left;
+  pointer-events: none;
+}
+.hovereffect .portfolio-img h3 span {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #fff;
+}
+.hovereffect .portfolio-img h3 span + span {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13px;
+  opacity: 0.8;
+}
