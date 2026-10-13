@@ -5822,3 +5822,17 @@ section.ms-instagram-section {
 .timeline-content .work-links { margin-top: 4px; font-size: 13px; line-height: 22px; }
 .timeline-content .work-links a { color: #62bdfc; text-decoration: underline; }
 .timeline-content .work-links a:hover { color: #8490ff; }
+
+/* Equal-size achievement cards */
+.achive { display: flex; flex-wrap: wrap; }
+.achive > [class*="col-"] { display: flex; margin-bottom: 24px; }
+.achive .count-block {
+  width: 100%;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.achive .count-block p { margin-bottom: 0; }
