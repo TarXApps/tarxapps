@@ -5895,3 +5895,8 @@ section.ms-instagram-section {
   line-height: 13px;
   opacity: 0.8;
 }
+
+/* Portfolio: category headings shown in the ALL view */
+.portfolio-content-items .cat-label { width: 100%; flex: 0 0 100%; max-width: 100%; margin: 28px 0 4px; }
+.portfolio-content-items .cat-label:first-child { margin-top: 0; }
+.portfolio-content-items .cat-label h4 { margin: 0; padding-bottom: 8px; font-size: 18px; font-weight: 600; border-bottom: 1px solid rgba(23, 24, 28, 0.15); }
