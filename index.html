@@ -185,7 +185,7 @@ Author URI: https://themeforest.net/user/ashishmaraviya
                 <span class="ligh-title">service</span>
             </div>
             <div class="row service-box m-b-minus-24px">
-                <div class="col-lg-4 col-md-6 col-xs-12" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+                <div class="col-lg-3 col-md-6 col-xs-12" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
                     <div class="flipper">
                         <div class="main-box">
                             <div class="box-front height-300 white-bg">
@@ -200,13 +200,13 @@ Author URI: https://themeforest.net/user/ashishmaraviya
                                 <div class="content-wrap">
                                     <h3>Graphic Design &amp; Video Editing</h3>
                                     <p>Posters, social media creatives, event visuals and edited videos for brands and events</p>
-                                    <a href="#" class="btn">Read more</a>
+                                    <a href="#portfolio" class="btn service-link" data-filter=".content">See my work</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                <div class="col-lg-3 col-md-6 col-xs-12" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
                     <div class="flipper">
                         <div class="main-box">
                             <div class="box-front height-300 white-bg">
@@ -221,13 +221,13 @@ Author URI: https://themeforest.net/user/ashishmaraviya
                                 <div class="content-wrap">
                                     <h3>AI-Assisted Web &amp; App Building</h3>
                                     <p>Websites and web apps, planned around your business goals and built with AI assistance</p>
-                                    <a href="#" class="btn">Read more</a>
+                                    <a href="#portfolio" class="btn service-link" data-filter=".saas">See my work</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                <div class="col-lg-3 col-md-6 col-xs-12" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
                     <div class="flipper">
                         <div class="main-box">
                             <div class="box-front height-300 white-bg">
@@ -242,7 +242,28 @@ Author URI: https://themeforest.net/user/ashishmaraviya
                                 <div class="content-wrap">
                                     <h3>E-Commerce Solutions</h3>
                                     <p>Launching and migrating online stores, from catalogue to checkout</p>
-                                    <a href="#" class="btn">Read more</a>
+                                    <a href="#portfolio" class="btn service-link" data-filter=".ecommerce">See my work</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-12" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+                    <div class="flipper">
+                        <div class="main-box">
+                            <div class="box-front height-300 white-bg">
+                                <img class="bg-img svg_img" src="assets/img/service/5.svg" alt="AI Workflow Automation">
+                                <div class="content-wrap">
+                                    <img class="icofont icofont-headphone-alt font-40px dark-color svg_img" src="assets/img/service/5.svg" alt="AI Workflow Automation">
+                                    <h3>AI Workflow Automation</h3>
+                                    <p>Automated workflows with n8n and Claude, like a comment responder for YouTube and Facebook pages</p>
+                                </div>
+                            </div>
+                            <div class="box-back height-300 gradient-bg">
+                                <div class="content-wrap">
+                                    <h3>AI Workflow Automation</h3>
+                                    <p>Automated workflows with n8n and Claude, like a comment responder for YouTube and Facebook pages</p>
+                                    <a href="#portfolio" class="btn service-link" data-filter=".content">See my work</a>
                                 </div>
                             </div>
                         </div>
@@ -788,6 +809,16 @@ Author URI: https://themeforest.net/user/ashishmaraviya
         }, 2500);
     </script>
 
+<script>
+$(function () {
+    $('.service-link').on('click', function (e) {
+        e.preventDefault();
+        var f = $(this).data('filter');
+        $('#portfolio .filter[data-filter="' + f + '"]').trigger('click');
+        $('html, body').animate({ scrollTop: $('#portfolio').offset().top - 70 }, 600);
+    });
+});
+</script>
 </body>
 
 </html>
