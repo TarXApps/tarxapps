@@ -5818,3 +5818,7 @@ section.ms-instagram-section {
   justify-content: center;
 }
 .service-box .main-box .box-front .content-wrap { width: 100%; padding: 42px 15px 0; }
+/* Work links under experience entries */
+.timeline-content .work-links { margin-top: 4px; font-size: 13px; line-height: 22px; }
+.timeline-content .work-links a { color: #62bdfc; text-decoration: underline; }
+.timeline-content .work-links a:hover { color: #8490ff; }
