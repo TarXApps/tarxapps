@@ -5902,7 +5902,13 @@ section.ms-instagram-section {
 .portfolio-content-items .cat-label h4 { margin: 0; padding-bottom: 8px; font-size: 18px; font-weight: 600; border-bottom: 1px solid rgba(23, 24, 28, 0.15); }
 
 /* AI fluency box */
-.ai-fluency{margin-top:28px;padding:18px 22px;border:1px solid rgba(128,128,128,.35);border-radius:8px}
-.ai-fluency h5{margin:0 0 10px}
-.ai-fluency ul{margin:0;padding-left:18px;list-style:disc}
-.ai-fluency li{margin-bottom:6px;line-height:1.5}
+.ai-fluency{margin-top:28px}
+.ai-fluency h5{margin:0 0 14px}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ai-tile{padding:16px 16px 14px;border-radius:8px;background:#17181c;color:#fff}
+.ai-tile i{font-size:20px;color:#7ea1ff;margin-bottom:8px;display:block}
+.ai-tile h6{margin:0 0 4px;font-size:15px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px}
+.ai-tile p{margin:0;font-size:13px;line-height:1.5;color:rgba(255,255,255,.75)}
+.ai-chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.ai-chips span{padding:5px 12px;border:1px solid #17181c;border-radius:20px;font-size:12px;font-weight:600;color:#17181c}
+@media (max-width:575px){.ai-grid{grid-template-columns:1fr}}
