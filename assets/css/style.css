@@ -5913,3 +5913,8 @@ section.ms-instagram-section {
 .ai-chips span{padding:5px 12px;border:1px solid #17181c;border-radius:20px;font-size:12px;font-weight:600;color:#17181c}
 @media (max-width:575px){.ai-grid{grid-template-columns:1fr}}
 .creative-toolkit{margin-top:28px}.creative-toolkit h5{margin-bottom:10px}.creative-toolkit .ai-chips{margin-top:0}
+
+.ai-full{margin-top:10px}
+@media (min-width:992px){.ai-full .ai-grid{grid-template-columns:repeat(4,1fr)}}
+.ai-full .ai-chips{justify-content:flex-start}
+.ai-full .ai-fluency h5{font-family:"Montserrat";color:#17181c;font-weight:600;font-size:14px;text-transform:uppercase;margin-bottom:14px}
