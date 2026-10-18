@@ -273,4 +273,3 @@
      */
     $('[data-tilt]').tilt();
 })(jQuery);
-//# sourceMappingURL=tilt.jquery.js.map
