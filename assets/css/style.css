@@ -5918,3 +5918,7 @@ section.ms-instagram-section {
 @media (min-width:992px){.ai-full .ai-grid{grid-template-columns:repeat(4,1fr)}}
 .ai-full .ai-chips{justify-content:flex-start}
 .ai-full .ai-fluency h5{font-family:"Montserrat";color:#17181c;font-weight:600;font-size:14px;text-transform:uppercase;margin-bottom:14px}
+
+/* Hero sub heading */
+.hero-sub{margin:-6px 0 14px;font-family:"Montserrat",sans-serif;font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#7ea1ff}
+@media (min-width:992px){.ms-detail .info .hero-sub{margin-top:-4px}}
