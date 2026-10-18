@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tariq Mohmad Shiekh">
-  <rect width="64" height="64" rx="14" fill="#10131a"/>
-  <path d="M19 20 L8.5 32 L19 44" fill="none" stroke="#5b8dff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M45 20 L55.5 32 L45 44" fill="none" stroke="#5b8dff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M27 22.5 L27 41.5 L40.5 32 Z" fill="#ffffff" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
-</svg>

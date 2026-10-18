@@ -137,7 +137,26 @@ $(document).ready(function () {
 		});
 	});
 
-
+  /*--------------------- News carousel -------------------------------- */
+  $('.news-carousel').owlCarousel({
+    loop: true,
+    margin: 24,
+    nav: false,
+    smartSpeed: 1000,
+    autoplay: true,
+    dots: false,
+    responsive: {
+        0: {
+            items: 1
+        },
+        576: {
+            items: 2
+        },
+        991: {
+            items: 3
+        }
+    }
+  });
   
   /*----------------------------- Direct chat --------------------------------*/
   $(document).ready(function () {
@@ -235,5 +254,93 @@ $(document).ready(function () {
           clicks = 0;
       });
   };
+  /*--------------------- Instagram slider & Category slider & Tooltips ---------------------*/
+  $(function(){
+      $('.insta-auto').infiniteslide({
+          direction: 'left',
+          speed: 50,
+          clone: 10
+      });
+      $('[data-toggle="tooltip"]').tooltip();
+  });
+  /*--------------------- water js start ---------------------*/
+  $(document).ready(function() {
+    try {
+        $('.ms-home-water').ripples({
+            resolution: 512,
+            dropRadius: 20, //px
+            perturbance: 0.01,
+        });
+        $('.ms-home-water').ripples({
+            resolution: 512,
+            dropRadius: 20, //px
+            perturbance: 0.04,
+            interactive: false
+        });
+    }
+    catch (e) {
+        $('.error').show().text(e);
+    }
 
+    $('.js-ripples-disable').on('click', function() {
+        $('.ms-home-water').ripples('destroy');
+        $(this).hide();
+    });
+
+    $('.js-ripples-play').on('click', function() {
+        $('.ms-home-water').ripples('play');
+    });
+
+    $('.js-ripples-pause').on('click', function() {
+        $('.ms-home-water').ripples('pause');
+    });
+
+    // Automatic drops
+    setInterval(function() {
+        var $el = $('.main');
+        var x = Math.random() * $el.outerWidth();
+        var y = Math.random() * $el.outerHeight();
+        var dropRadius = 20;
+        var strength = 0.04 + Math.random() * 0.04;
+
+        $el.ripples('drop', x, y, dropRadius, strength);
+    }, 600);
+  });
+  
+  /*--------------------- Custom Cursor JS -------------------------------- */
+  var ms_cursor = document.querySelector('.ms-cursor');
+  var ms_cursorinner = document.querySelector('.ms-cursor-2');
+  var a = document.querySelectorAll('a');
+
+  document.addEventListener('mousemove', function(e){
+    var x = e.clientX;
+    var y = e.clientY;
+    ms_cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+  });
+
+  document.addEventListener('mousemove', function(e){
+    var x = e.clientX;
+    var y = e.clientY;
+    ms_cursorinner.style.left = x + 'px';
+    ms_cursorinner.style.top = y + 'px';
+  });
+
+  document.addEventListener('mousedown', function(){
+    ms_cursor.classList.add('click');
+    ms_cursorinner.classList.add('ms-cursorinnerhover')
+  });
+
+  document.addEventListener('mouseup', function(){
+    ms_cursor.classList.remove('click')
+    ms_cursorinner.classList.remove('ms-cursorinnerhover')
+  });
+
+  a.forEach(item => {
+    item.addEventListener('mouseover', () => {
+      ms_cursor.classList.add('ms-hover-cursor');
+    });
+    item.addEventListener('mouseleave', () => {
+      ms_cursor.classList.remove('ms-hover-cursor');
+    });
+  })
 });

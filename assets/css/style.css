@@ -1,4 +1,46 @@
-/* Tariq Mohmad Shiekh, personal site styles. Main accent: #2f6fed */
+/**------------------------------------------------------
+Item Name: Masterly - Personal Portfolio HTML Template.
+Author: ashishmaraviya
+Version: 2.0
+Copyright 2023
+Author URI: https://themeforest.net/user/ashishmaraviya
+-----------------------------------------------------------**/
+/*------------------------------------------------------------------
+[Table of contents]
+
+01. Typography
+02. Components
+    - Common
+    - Header
+    - Side Tools
+03. Layouts
+    - Hero (Home)
+    - About
+    - Service
+    - Experience
+    - Portfolio
+    - Counter
+    - News
+    - Contact
+    - Footer
+    - Whats Chat
+    - Instagram
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+# [Color codes]
+
+Masterly template contains couple color like:
+
+# linear-gradient(-45deg, #8490ff, #62bdfc);  // Main color
+# linear-gradient(-45deg, #F2709C, #ffb2cc);  // Color-2.css
+# linear-gradient(-45deg, #5243a5, #9486e3);  // Color-3.css
+# linear-gradient(-45deg, #3e9172, #90ddc0);  // Color-4.css
+# linear-gradient(-45deg, #fec84e, #ffdea8);  // Color-5.css
+# linear-gradient(-45deg, #677993, #2c394a);  // Color-6.css
+# linear-gradient(-45deg, #b97790, #f7c6d8);  // Color-7.css
+# linear-gradient(-45deg, #b76147, #ffc1af);  // Color-8.css
+# linear-gradient(-45deg, #d31111, #ffc4c4);  // Color-9.css
+# */
 /*-------------------------------------------------
   Fonts Family & Style CSS
 ---------------------------------------------------*/
@@ -292,7 +334,7 @@ a {
 
 .ms-btn, .ms-btn-1 {
   border: none;
-  background: #2f6fed;
+  background: linear-gradient(-45deg, #8490ff, #62bdfc);
   color: #fff;
   overflow: hidden;
   text-align: center;
@@ -485,7 +527,7 @@ a {
 
 .main-bg {
   height: 100%;
-  background: #2f6fed;
+  background: linear-gradient(-45deg, #8490ff, #62bdfc);
 }
 
 .ms-row {
@@ -586,7 +628,7 @@ section {
 
 #scrollup {
   display: inline-block;
-  background: #2f6fed;
+  background: linear-gradient(-45deg, #8490ff, #62bdfc);
   width: 36px;
   height: 36px;
   text-align: center;
@@ -614,6 +656,53 @@ section {
 #scrollup.show {
   opacity: 1;
   visibility: visible;
+}
+
+.ms-cursor {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid #555;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(calc(-50% + 15px), -50%);
+          transform: translate(calc(-50% + 15px), -50%);
+  -webkit-animation: morphing-image 10s linear infinite forwards;
+          animation: morphing-image 10s linear infinite forwards;
+  z-index: 999;
+}
+
+.ms-cursor-2 {
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: #555;
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  -webkit-transition: width 0.3s, height 0.3s, opacity 0.3s;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  z-index: 999;
+}
+
+.ms-hover-cursor {
+  width: 50px;
+  height: 50px;
+  background-color: #799ffe;
+  opacity: 0.5;
+  z-index: 999;
+}
+
+.ms-cursorinnerhover {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  z-index: 999;
 }
 
 @-webkit-keyframes morphing-image {
@@ -817,6 +906,297 @@ footer {
 }
 .ms-footer-detail .ms-social ul li a:hover i {
   color: #7189cb;
+}
+
+/** End Contact Section **/
+/*===== Side tool options css =====*/
+.ms-tool {
+  position: fixed;
+  left: -158px;
+  top: 150px;
+  width: 158px;
+  z-index: 20;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  /**  Backgrounds  **/
+  /**  Light Dark modes  **/
+  /**  Light Dark modes  **/
+}
+.ms-tool .ms-tool-btn {
+  position: absolute;
+  left: 158px;
+  width: 40px;
+  height: 40px;
+  color: #000;
+  -webkit-transition: all ease-in 0.3s;
+  transition: all ease-in 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 25px;
+  z-index: -1;
+  text-decoration: none;
+  background: #fff;
+  top: 0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 10px 10px 0;
+}
+.ms-tool .option-box-title {
+  background: #5076db;
+  padding: 3px 15px;
+}
+.ms-tool .option-box-title h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  padding: 6px 9px;
+  font-weight: 500;
+}
+.ms-tool .ms-color {
+  background: #fff;
+  padding: 15px;
+  overflow: auto;
+  border: 2px solid #5076db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.ms-tool .ms-color li {
+  width: 25px;
+  height: 25px;
+  margin: 7px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: all ease-in 0.3s;
+  transition: all ease-in 0.3s;
+}
+.ms-tool .ms-color li .color {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.ms-tool .ms-color li .color:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.ms-tool .ms-color li .color.c-1 {
+  background: linear-gradient(-45deg, #8490ff, #62bdfc);
+}
+.ms-tool .ms-color li .color.c-2 {
+  background: linear-gradient(-45deg, #F2709C, #ffb2cc);
+}
+.ms-tool .ms-color li .color.c-3 {
+  background: linear-gradient(-45deg, #5243a5, #9486e3);
+}
+.ms-tool .ms-color li .color.c-4 {
+  background: linear-gradient(-45deg, #3e9172, #90ddc0);
+}
+.ms-tool .ms-color li .color.c-5 {
+  background: linear-gradient(-45deg, #fec84e, #ffdea8);
+}
+.ms-tool .ms-color li .color.c-6 {
+  background: linear-gradient(-45deg, #677993, #2c394a);
+}
+.ms-tool .ms-color li .color.c-7 {
+  background: linear-gradient(-45deg, #b97790, #f7c6d8);
+}
+.ms-tool .ms-color li .color.c-8 {
+  background: linear-gradient(-45deg, #b76147, #ffc1af);
+}
+.ms-tool .ms-color li .color.c-9 {
+  background: linear-gradient(-45deg, #d31111, #ffc4c4);
+}
+.ms-tool .ms-skin {
+  background: #fff;
+  padding: 15px 10px;
+  overflow: auto;
+  border: 2px solid #5076db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.ms-tool .ms-skin li {
+  width: 30px;
+  height: 30px;
+  margin: 7px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: all ease-in 0.3s;
+  transition: all ease-in 0.3s;
+}
+.ms-tool .ms-skin li .skin {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.ms-tool .ms-skin li .skin:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.ms-tool .ms-skin li .skin.s-1 {
+  background-color: #fff;
+  background-size: 100%;
+}
+.ms-tool .ms-skin li .skin.s-2 {
+  background-image: url("../img/shape/bg-thumb-2.png");
+  background-size: 100%;
+}
+.ms-tool .ms-skin li .skin.s-3 {
+  background-image: url("../img/shape/bg-thumb-3.png");
+  background-size: 100%;
+}
+.ms-tool .ms-skin {
+  background: #fff;
+  padding: 15px;
+  overflow: auto;
+  border: 2px solid #5076db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.ms-tool .ms-skin li {
+  width: 25px;
+  height: 25px;
+  margin: 7px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: all ease-in 0.3s;
+  transition: all ease-in 0.3s;
+}
+.ms-tool .ms-skin li span {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.ms-tool .ms-skin li span:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.ms-tool .ms-skin li .not {
+  background-image: url(../img/shape/1.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.ms-tool .ms-skin li .cross {
+  background-image: url(../img/shape/2.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.ms-tool .ms-skin li .angle {
+  background-image: url(../img/shape/3.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.ms-tool .ms-dark {
+  background: #fff;
+  padding: 15px;
+  overflow: auto;
+  border: 2px solid #5076db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.ms-tool .ms-dark li {
+  width: 25px;
+  height: 25px;
+  margin: 7px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: all ease-in 0.3s;
+  transition: all ease-in 0.3s;
+}
+.ms-tool .ms-dark li span {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.ms-tool .ms-dark li span:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.ms-tool .ms-dark li .dark {
+  background-color: #555;
+}
+.ms-tool .ms-dark li .light {
+  background-color: #fff;
 }
 
 .firefly {
@@ -4101,7 +4481,7 @@ footer {
   width: 330px;
   height: 330px;
   margin: auto;
-  background: #2f6fed;
+  background: linear-gradient(-45deg, #8490ff, #62bdfc);
   -webkit-transform: rotate(-12deg);
           transform: rotate(-12deg);
   border-radius: 20px;
@@ -5084,6 +5464,20 @@ li.mixitup-control-active {
           justify-content: center;
   border-radius: 30px;
 }
+.ms-style .ms-button .whatsapp {
+  width: 23px;
+  height: 23px;
+  background-image: url(../images/common/whatsapp.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: table;
+  margin-right: 0;
+  font-size: 25px;
+  text-align: center;
+  line-height: 38px;
+  cursor: pointer;
+  color: #2ab674;
+}
 .ms-style .ms-panel {
   display: none;
   margin-bottom: 5px;
@@ -5426,8 +5820,8 @@ section.ms-instagram-section {
 .service-box .main-box .box-front .content-wrap { width: 100%; padding: 42px 15px 0; }
 /* Work links under experience entries */
 .timeline-content .work-links { margin-top: 4px; font-size: 13px; line-height: 22px; }
-.timeline-content .work-links a { color: #2f6fed; text-decoration: underline; }
-.timeline-content .work-links a:hover { color: #1d4fbf; }
+.timeline-content .work-links a { color: #62bdfc; text-decoration: underline; }
+.timeline-content .work-links a:hover { color: #8490ff; }
 
 /* Equal-size achievement cards */
 .achive { display: flex; flex-wrap: wrap; }
@@ -5512,7 +5906,7 @@ section.ms-instagram-section {
 .ai-fluency h5{margin:0 0 14px}
 .ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .ai-tile{padding:16px 16px 14px;border-radius:8px;background:transparent;border:1px solid #17181c;color:#17181c}
-.ai-tile i{font-size:20px;color:#2f6fed;margin-bottom:8px;display:block}
+.ai-tile i{font-size:20px;color:#6f93f5;margin-bottom:8px;display:block}
 .ai-tile h6{margin:0 0 4px;font-size:15px;font-weight:700;color:#17181c;text-transform:uppercase;letter-spacing:.5px}
 .ai-tile p{margin:0;font-size:13px;line-height:1.5;color:#555}
 .ai-chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
@@ -5526,10 +5920,5 @@ section.ms-instagram-section {
 .ai-full .ai-fluency h5{font-family:"Montserrat";color:#17181c;font-weight:600;font-size:14px;text-transform:uppercase;margin-bottom:14px}
 
 /* Hero sub heading */
-.hero-sub{margin:-6px 0 14px;font-family:"Montserrat",sans-serif;font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#8fb0ff}
+.hero-sub{margin:-6px 0 14px;font-family:"Montserrat",sans-serif;font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#7ea1ff}
 @media (min-width:992px){.ms-detail .info .hero-sub{margin-top:-4px}}
-
-/* Footer navigation */
-.ms-footer-nav{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center}
-.ms-footer-nav a{font-size:14px;font-weight:500;color:#fff;opacity:.85;text-decoration:none}
-.ms-footer-nav a:hover{opacity:1;text-decoration:underline}
