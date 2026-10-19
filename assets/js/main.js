@@ -142,25 +142,8 @@ $(document).ready(function () {
   /*----------------------------- Direct chat --------------------------------*/
   $(document).ready(function () {
 
-    //click event on a tag
-    $('.ms-list').on("click", function () {
-
-        var number = $(this).attr("data-number");
-        var message = $(this).attr("data-message");
-
-        //checking for device type
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            // redirect link for mobile WhatsApp chat awc
-            window.open('https://wa.me/' + number + '/?text=' + message, '-blank');
-        }
-        else {
-            // redirect link for WhatsApp chat in website
-            window.open('https://web.WhatsApp.com/send?phone=' + number + '&text=' + message, '-blank');
-        }
-    })
-
     // chat widget open/close duration
-    $('ms-style1').launchBtn({ openDuration: 400, closeDuration: 300 });
+    $('.ms-style').launchBtn({ openDuration: 400, closeDuration: 300 });
   });
 
   // chat panel open/close function
