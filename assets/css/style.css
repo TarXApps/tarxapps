@@ -5529,7 +5529,3 @@ section.ms-instagram-section {
 .hero-sub{margin:-6px 0 14px;font-family:"Montserrat",sans-serif;font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#8fb0ff}
 @media (min-width:992px){.ms-detail .info .hero-sub{margin-top:-4px}}
 
-/* Footer navigation */
-.ms-footer-nav{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center}
-.ms-footer-nav a{font-size:14px;font-weight:500;color:#fff;opacity:.85;text-decoration:none}
-.ms-footer-nav a:hover{opacity:1;text-decoration:underline}
