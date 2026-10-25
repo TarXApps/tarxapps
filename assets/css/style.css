@@ -5529,3 +5529,6 @@ section.ms-instagram-section {
 .hero-sub{margin:-6px 0 14px;font-family:"Montserrat",sans-serif;font-size:13px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#8fb0ff}
 @media (min-width:992px){.ms-detail .info .hero-sub{margin-top:-4px}}
 
+
+.hero-cv{margin-left:12px}
+@media (max-width:575px){.hero-cv{margin-left:0;margin-top:12px}}
