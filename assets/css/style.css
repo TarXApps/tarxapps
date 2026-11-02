@@ -5532,3 +5532,6 @@ section.ms-instagram-section {
 
 .hero-cv{margin-left:12px}
 @media (max-width:575px){.hero-cv{margin-left:0;margin-top:12px}}
+
+/* Comment-responder case-study line */
+.responder-demo .rd-case { margin: 0 0 16px; font-size: 15px; line-height: 24px; color: #555; }
