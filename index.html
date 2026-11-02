@@ -708,6 +708,7 @@
                                                 </div>
                                                 <div class="overlay">
                                                     <div class="overlay-info">
+                                            <a class="info" data-fancybox data-src="#blog-demo" href="javascript:;" title="See how it works"><i class="fa fa-cogs" aria-hidden="true"></i></a>
                                             <a class="info" href="https://hiringbot.online/blog" target="_blank" rel="noopener noreferrer" title="See the blog"><i class="fa fa-link" aria-hidden="true"></i></a>
                                                     </div>
                                                 </div>
@@ -1222,6 +1223,20 @@ $(function () {
     });
 });
 </script>
+
+    <!-- Blog posting automation summary (opens from the portfolio card) -->
+    <div id="blog-demo" class="responder-demo" style="display:none">
+        <h3>HiringBot Blog Posting Automation</h3>
+        <p class="rd-lead">An n8n workflow that publishes blog posts to the HiringBot blog on a fixed schedule, so the blog keeps going without anyone posting by hand.</p>
+        <p class="rd-case"><b>The problem:</b> a blog only helps if it publishes regularly, and posting each article by hand every week is easy to forget. <b>What I built:</b> a workflow that takes the next article from a Google Drive folder and publishes it to the blog twice a week, on Monday and Friday at 10:00 IST. <b>The result:</b> the blog posts itself, and the first post went live in October 2026.</p>
+        <ol class="rd-flow">
+            <li>Schedule fires, Monday and Friday 10:00 IST</li>
+            <li>n8n picks the next article from the Google Drive blogs folder</li>
+            <li>Article is published to hiringbot.online/blog</li>
+            <li>File is moved to a &ldquo;posted&rdquo; folder, so nothing posts twice</li>
+        </ol>
+        <p class="rd-stat"><a href="https://hiringbot.online/blog" target="_blank" rel="noopener noreferrer">See the live blog &#8599;</a></p>
+    </div>
 
     <!-- Comment Responder demo (opens from the portfolio card) -->
     <div id="responder-demo" class="responder-demo" style="display:none">
